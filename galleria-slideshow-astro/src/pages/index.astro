@@ -1,16 +1,216 @@
 ---
+import BaseLayout from "../layout/BaseLayout.astro";
 
+import Container from "../components/Container.astro";
+
+import data from "../data/data.json";
+import grid from "../data/grid.json";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Galleria">
+  <Container>
+    <section class="gallery">
+      <div class="gallery-grid">
+        {
+          data.map(({ name, artist, images: { thumbnail, hero } }, idx) => {
+            const { w, h } = grid[idx].mobile;
+            const styleMobile = `--w-mobile:${w}; --h-mobile:${h};`;
+
+            return (
+              <a href={`/art/${idx}`} class="gallery__item-link">
+                {/* <figure
+  role="button"
+  tabindex="0"
+  aria-haspopup="dialog"
+  aria-controls={`modal-${idx}`}
+  aria-label={`View details about "${name}" by ${artist.name}`}
+  onclick="openModal(idx)"  <!-- or use Astro/JS handler -->
+  onkeypress="if(event.key==='Enter' || event.key===' ') openModal(idx)"
+> */}
+
+                <figure
+                  id={`galleryItem${idx}`}
+                  class="gallery__item relative"
+                  aria-labelledby={`caption-${idx}`}
+                  data-item-idx={idx}
+                  role="group"
+                >
+                  <picture>
+                    <source media="(min-width: 600px)" srcset={hero.large} />
+                    <img
+                      style={styleMobile}
+                      class="gallery__item--image lazy-image"
+                      data-src={hero.small}
+                      src={thumbnail}
+                      alt={`Painting titled "${name}" by ${artist.name}`}
+                      loading="lazy"
+                    />
+                  </picture>
+
+                  <figcaption
+                    id={`caption-${idx}`}
+                    class="gallery__item--caption flex flex-col justify-center items-start"
+                  >
+                    <span class="gallery__paint-name text-white text-preset-2-mobile">
+                      {name}
+                    </span>
+                    <span class="gallery__paint-artist text-white-75 text-preset-5 text-preset-5-mobile">
+                      {artist.name}
+                    </span>
+                  </figcaption>
+                </figure>
+              </a>
+            );
+          })
+        }
+      </div>
+    </section>
+  </Container>
+
+  <!-- <div
+  id={`modal-${idx}`}
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby={`modal-title-${idx}`}
+  aria-describedby={`modal-desc-${idx}`}
+>
+  <h2 id={`modal-title-${idx}`}>{name}</h2>
+  <p id={`modal-desc-${idx}`}>{artist.name}</p>
+  Close button should return focus to the figure -->
+</BaseLayout>
+
+<!-- <script type="module">
+  window.addEventListener("load", () => {
+    document.querySelectorAll(".gallery__item img").forEach((img) => {
+      const figure = img.closest(".gallery__item");
+      if (figure) figure.classList.add("fade-in");
+    });
+  });
+</script> -->
+
+<script type="module">
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      // entries.forEach((entry) => {
+      //   if (entry.isIntersecting) {
+      //     const item = entry.target;
+      //     item.classList.add("fade-in");
+      //     observer.unobserve(item); // Stop observing once faded in
+      //   }
+      // });
+
+      // entries.forEach((entry) => {
+      //   if (entry.isIntersecting) {
+      //     entry.target.style.transitionDelay = `${delay * 100}ms`;
+      //     entry.target.classList.add("fade-in");
+      //     observer.unobserve(entry.target);
+      //     delay++;
+      //   }
+      // });
+
+      let delay = 0;
+
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const item = entry.target;
+
+          // Add staggered animation delay
+          item.style.transitionDelay = `${delay * 100}ms`;
+          item.classList.add("fade-in");
+
+          // Lazy load image (swap data-src into src)
+          const img = item.querySelector("img[data-src]");
+          if (img && img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute("data-src");
+          }
+
+          observer.unobserve(item);
+          delay++;
+        }
+      });
+    },
+    {
+      threshold: 0.1, // Trigger when 10% visible
+    }
+  );
+
+  document.querySelectorAll(".gallery__item").forEach((item) => {
+    observer.observe(item);
+  });
+</script>
+
+<style>
+  .gallery {
+  }
+
+  .gallery__item--caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px); /* Less motion = smoother */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* .gallery__item {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    will-change: opacity, transform;
+  } */
+
+  .gallery__item {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s ease;
+    will-change: opacity, transform;
+  }
+
+  .gallery__item.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .gallery__item .gallery__item--caption {
+    opacity: 0;
+    transform: translateY(10px);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
+    transition-delay: 0.2s;
+  }
+
+  .gallery__item.fade-in .gallery__item--caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .lazy-image {
+    filter: blur(10px);
+    transition: filter 0.4s ease;
+  }
+
+  .gallery__item.fade-in .lazy-image {
+    filter: blur(0);
+  }
+
+  .gallery__item--image {
+    aspect-ratio: var(--w-mobile) / var(--h-mobile);
+    width: 100%;
+    /* width: var(--w-mobile);
+    height: var(--h-mobile); */
+    object-fit: contain;
+
+    object-fit: cover;
+  }
+</style>

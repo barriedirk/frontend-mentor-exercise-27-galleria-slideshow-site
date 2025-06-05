@@ -1,0 +1,97 @@
+@media screen and (max-width: 37.5em) {
+  .text-preset-1-mobile {
+    font-family: var(--ff);
+    font-weight: var(--fw-bold);
+    font-size: 6.25rem;
+    line-height: 100%;
+    letter-spacing: 0rem;
+  }
+
+  .text-preset-2-mobile {
+    font-family: var(--ff);
+    font-weight: var(--fw-bold);
+    font-size: 1.5rem;
+    line-height: 125%;
+    letter-spacing: 0rem;
+  }
+
+  .text-preset-3-mobile {
+    font-family: var(--ff);
+    font-weight: var(--fw-bold);
+    font-size: 0.875rem;
+    line-height: 200%;
+    letter-spacing: -0.015625rem;
+  }
+
+  .text-preset-4-mobile {
+    font-family: "Libre Baskerville", serif;
+    font-weight: var(--fw-normal);
+    font-size: 0.625rem;
+    line-height: 120%;
+    letter-spacing: 0rem;
+  }
+
+  .text-preset-5-mobile {
+    font-family: "Libre Baskerville", serif;
+    font-weight: var(--fw-normal);
+    font-size: 0.5625rem;
+    line-height: 125%;
+    letter-spacing: 0.125rem;
+  }
+}
+
+.text-preset-1 {
+  font-family: var(--ff);
+  font-weight: var(--fw-bold);
+  font-size: 12.5rem;
+  line-height: 115%;
+  letter-spacing: -0.0125rem;
+}
+
+.text-preset-2 {
+  font-family: var(--ff);
+  font-weight: var(--fw-bold);
+  font-size: 3.5rem;
+  line-height: 115%;
+  letter-spacing: 0rem;
+}
+
+.text-preset-3 {
+  font-family: var(--ff);
+  font-weight: var(--fw-bold);
+  font-size: 1.125rem;
+  line-height: 125%;
+  letter-spacing: 0rem;
+}
+
+.text-preset-4 {
+  font-family: var(--ff);
+  font-weight: var(--fw-normal);
+  font-size: 0.9375rem;
+  line-height: 135%;
+  letter-spacing: 0rem;
+}
+
+.text-preset-5 {
+  font-family: var(--ff);
+  font-weight: var(--fw-normal);
+  font-size: 0.8125rem;
+  line-height: 125%;
+  letter-spacing: 0rem;
+}
+
+.text-preset-6 {
+  font-family: var(--ff);
+  font-weight: var(--fw-bold);
+  font-size: 0.75rem;
+  line-height: 125%;
+  letter-spacing: 0.15625rem;
+}
+
+.text-preset-7 {
+  font-family: var(--ff);
+  font-weight: var(--fw-bold);
+  font-size: 0.625rem;
+  line-height: 120%;
+  letter-spacing: 0.125rem;
+}

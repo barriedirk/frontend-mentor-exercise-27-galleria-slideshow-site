@@ -1,0 +1,24 @@
+:root {
+  --clr-grey-400: rgb(125, 125, 125);
+  --clr-grey-200: rgb(216, 216, 216);
+  --clr-grey-150: rgb(229, 229, 229);
+  --clr-grey-100: rgb(243, 243, 243);
+
+  --clr-white: rgb(255, 255, 255);
+  --clr-white-75: rgba(255, 255, 255, 0.75);
+  --clr-black: rgb(0, 0, 0);
+
+  --gradient: linear-gradient(to bottom, var(--clr-white) 0, var(--clr-black) 84%);
+
+  --ff: "Libre Baskerville", serif;
+
+  --fw-thin: 100;
+  --fw-extralight: 200;
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  --fw-black: 900;
+}

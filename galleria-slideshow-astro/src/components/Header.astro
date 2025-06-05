@@ -1,0 +1,60 @@
+---
+import Container from "./Container.astro";
+
+interface Props {
+  urlActive?: string;
+}
+
+const { urlActive = "" } = Astro.props;
+---
+
+<header
+  class="header h-[80px] flex flex-row justify-between items-center"
+  role="banner"
+>
+  <Container className="flex flex-row justify-between items-center">
+    <a href="./" class="header__logo" aria-label="Go to homepage">
+      <svg
+        class="logo w-[113px] h-[32px] basis-[32px] lg:w-[170px] lg:h-[48px] lg:basis-[48px] inline-block flex-none"
+        aria-hidden="true"
+      >
+        <use href="./assets/shared/logo.svg#logo-galleria"></use>
+      </svg>
+    </a>
+    <div id="slideshow-announcement" aria-live="polite" class="sr-only"></div>
+    <button
+      id="slideshow-toggle"
+      type="button"
+      aria-pressed="false"
+      aria-label="Start image slideshow"
+      class="header__start-slideshow text-grey-400 text-preset-6 text-preset-5-mobile focus:outline-black focus:outline-2 focus:outline-solid"
+      >START SLIDESHOW</button
+    >
+  </Container>
+</header>
+
+<script type="module">
+  const toggleBtn = document.getElementById("slideshow-toggle");
+  const announcer = document.getElementById("slideshow-announcement");
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      const isPressed = toggleBtn.getAttribute("aria-pressed") === "true";
+      const newState = !isPressed;
+
+      // Toggle aria-pressed state
+      toggleBtn.setAttribute("aria-pressed", String(!isPressed));
+
+      // Optional: change text or class based on state
+      toggleBtn.textContent = isPressed ? "START SLIDESHOW" : "STOP SLIDESHOW";
+      toggleBtn.setAttribute(
+        "aria-label",
+        isPressed ? "Start image slideshow" : "Stop image slideshow"
+      );
+
+      announcer.textContent = newState
+        ? "Slideshow started"
+        : "Slideshow stopped";
+    });
+  }
+</script>

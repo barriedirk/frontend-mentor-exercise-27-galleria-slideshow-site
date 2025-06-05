@@ -1,0 +1,55 @@
+.text-grey-400 {
+  color: var(--clr-grey-400);
+}
+
+.text-grey-200 {
+  color: var(--clr-grey-200);
+}
+
+.text-grey-150 {
+  color: var(--clr-grey-150);
+}
+
+.text-grey-100 {
+  color: var(--clr-grey-100);
+}
+
+.text-white {
+  color: var(--clr-white);
+}
+
+.text-white-75 {
+  color: var(--clr-white-75);
+}
+
+.text-black {
+  color: var(--clr-black);
+}
+
+.bg-grey-400 {
+  background-color: var(--clr-grey-400);
+}
+
+.bg-grey-200 {
+  background-color: var(--clr-grey-200);
+}
+
+.bg-grey-150 {
+  background-color: var(--clr-grey-150);
+}
+
+.bg-grey-100 {
+  background-color: var(--clr-grey-100);
+}
+
+.bg-white {
+  background-color: var(--clr-white);
+}
+
+.bg-black {
+  background-color: var(--clr-black);
+}
+
+.bg-gradient {
+  background: var(--gradient);
+}
