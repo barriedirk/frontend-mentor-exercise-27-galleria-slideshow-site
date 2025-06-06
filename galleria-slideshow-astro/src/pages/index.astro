@@ -1,23 +1,27 @@
 ---
 import BaseLayout from "../layout/BaseLayout.astro";
-
 import Container from "../components/Container.astro";
 
-import data from "../data/data.json";
-import grid from "../data/grid.json";
+import data from "../data/data-with-sizes.json";
 ---
 
 <BaseLayout title="Galleria">
-  <Container>
+  <Container className="mt-[20px]">
     <section class="gallery">
-      <div class="gallery-grid">
+      <div class="gallery-masonry">
         {
           data.map(({ name, artist, images: { thumbnail, hero } }, idx) => {
-            const { w, h } = grid[idx].mobile;
-            const styleMobile = `--w-mobile:${w}; --h-mobile:${h};`;
+            const { small, large } = hero;
+
+            const styleImage = `--thumbnail-width:${thumbnail.width}; --thumbnail-height:${thumbnail.height};--hero-small-width:${small.width}; --hero-small-height:${small.height};--hero-large-width:${large.width}; --hero-large-height:${large.height};--grid-area:area-${idx};`;
+            const styleItem = `--grid-area:area-${idx};`;
 
             return (
-              <a href={`/art/${idx}`} class="gallery__item-link">
+              <a
+                href={`/art/${idx}`}
+                class="gallery__item-link"
+                style={styleItem}
+              >
                 {/* <figure
   role="button"
   tabindex="0"
@@ -36,12 +40,15 @@ import grid from "../data/grid.json";
                   role="group"
                 >
                   <picture>
-                    <source media="(min-width: 600px)" srcset={hero.large} />
+                    <source
+                      media="(min-width: 600px)"
+                      srcset={hero.large.src}
+                    />
                     <img
-                      style={styleMobile}
+                      style={styleImage}
                       class="gallery__item--image lazy-image"
-                      data-src={hero.small}
-                      src={thumbnail}
+                      data-src={hero.small.src}
+                      src={thumbnail.src}
                       alt={`Painting titled "${name}" by ${artist.name}`}
                       loading="lazy"
                     />
@@ -49,12 +56,12 @@ import grid from "../data/grid.json";
 
                   <figcaption
                     id={`caption-${idx}`}
-                    class="gallery__item--caption flex flex-col justify-center items-start"
+                    class="gallery__item--caption flex flex-col gap-3.5 justify-center items-start"
                   >
-                    <span class="gallery__paint-name text-white text-preset-2-mobile">
+                    <span class="gallery__paint-name text-white text-shadow-[1px_1px_rgb(0_0_0_/_0.5)] text-preset-2-mobile">
                       {name}
                     </span>
-                    <span class="gallery__paint-artist text-white-75 text-preset-5 text-preset-5-mobile">
+                    <span class="gallery__paint-artist text-white-75 text-shadow-[1px_1px_rgb(0_0_0_/_0.5)] text-preset-5 text-preset-5-mobile">
                       {artist.name}
                     </span>
                   </figcaption>
@@ -144,10 +151,21 @@ import grid from "../data/grid.json";
   .gallery {
   }
 
+  .gallery-masonry {
+    /* display: grid; */
+    gap: 40px;
+  }
+
+  .gallery__item-link {
+    /* grid-area: var(--grid-area); */
+    display: inline-block;
+  }
+
   .gallery__item--caption {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 30px;
+    left: 30px;
+    max-width: 246px;
   }
 
   @keyframes fadeInUp {
@@ -204,13 +222,37 @@ import grid from "../data/grid.json";
     filter: blur(0);
   }
 
-  .gallery__item--image {
-    aspect-ratio: var(--w-mobile) / var(--h-mobile);
-    width: 100%;
-    /* width: var(--w-mobile);
-    height: var(--h-mobile); */
-    object-fit: contain;
+  .gallery__item-link {
+    margin-inline: auto;
+    break-inside: avoid;
+  }
 
+  .gallery__item--image {
+    aspect-ratio: var(--thumbnail-width) / var(--thumbnail-height);
+    width: 100%;
     object-fit: cover;
+  }
+
+  @media screen and (min-width: 37.5em) {
+    .gallery__item--image {
+      /* aspect-ratio: var(--hero-large-width) / var(--hero-large-height); */
+      /* max-width: calc(var(--hero-large-width) * 1px); */
+    }
+  }
+
+  @media screen and (min-width: 37.5em) {
+    .gallery-masonry {
+      column-count: 2;
+      column-gap: 40px;
+    }
+
+    .gallery-masonry > * {
+      break-inside: avoid;
+      margin-bottom: 40px;
+    }
+
+    .gallery__item-link {
+      /* max-width: 310px; */
+    }
   }
 </style>

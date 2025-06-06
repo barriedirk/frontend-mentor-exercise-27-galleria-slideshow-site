@@ -12,7 +12,9 @@ const { urlActive = "" } = Astro.props;
   class="header h-[80px] flex flex-row justify-between items-center"
   role="banner"
 >
-  <Container className="flex flex-row justify-between items-center">
+  <Container
+    className="flex flex-row justify-between items-center h-full border-b border-gray-200"
+  >
     <a href="./" class="header__logo" aria-label="Go to homepage">
       <svg
         class="logo w-[113px] h-[32px] basis-[32px] lg:w-[170px] lg:h-[48px] lg:basis-[48px] inline-block flex-none"

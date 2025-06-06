@@ -9,14 +9,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.8",
-    "astro": "^5.8.1",
-    "tailwindcss": "^4.1.8"
+    "@tailwindcss/vite": "4.1.8",
+    "astro": "5.8.1",
+    "tailwindcss": "4.1.8"
   },
   "devDependencies": {
     "prettier": "3.5.3",
     "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "0.6.11"
+    "prettier-plugin-tailwindcss": "0.6.11",
+    "image-size": "2.0.2"
   },
   "browserslist": [
     "last 2 versions",

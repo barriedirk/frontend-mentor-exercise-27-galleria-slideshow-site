@@ -1,0 +1,382 @@
+[
+  {
+    "file": "assets/arnolfini-portrait/artist.jpg",
+    "width": 128,
+    "height": 128
+  },
+  {
+    "file": "assets/arnolfini-portrait/gallery.jpg",
+    "width": 509,
+    "height": 712
+  },
+  {
+    "file": "assets/arnolfini-portrait/hero-large.jpg",
+    "width": 950,
+    "height": 1120
+  },
+  {
+    "file": "assets/arnolfini-portrait/hero-small.jpg",
+    "width": 654,
+    "height": 566
+  },
+  {
+    "file": "assets/arnolfini-portrait/thumbnail.jpg",
+    "width": 327,
+    "height": 330
+  },
+  {
+    "file": "assets/favicon-32x32.png",
+    "width": 32,
+    "height": 32
+  },
+  {
+    "file": "assets/girl-with-pearl-earring/artist.jpg",
+    "width": 128,
+    "height": 128
+  },
+  {
+    "file": "assets/girl-with-pearl-earring/gallery.jpg",
+    "width": 519,
+    "height": 712
+  },
+  {
+    "file": "assets/girl-with-pearl-earring/hero-large.jpg",
+    "width": 950,
+    "height": 1120
+  },
+  {
+    "file": "assets/girl-with-pearl-earring/hero-small.jpg",
+    "width": 654,
+    "height": 560
+  },
+  {
+    "file": "assets/girl-with-pearl-earring/thumbnail.jpg",
+    "width": 327,
+    "height": 400
+  },
+  {
+    "file": "assets/guernica/artist.jpg",
+    "width": 128,
+    "height": 128
+  },
+  {
+    "file": "assets/guernica/gallery.jpg",
+    "width": 1253,
+    "height": 712
+  },
+  {
+    "file": "assets/guernica/hero-large.jpg",
+    "width": 950,
+    "height": 1120
+  },
+  {
+    "file": "assets/guernica/hero-small.jpg",
+    "width": 654,
+    "height": 560
+  },
+  {
+    "file": "assets/guernica/thumbnail.jpg",
+    "width": 327,
+    "height": 285
+  },
+  {
+    "file": "assets/lady-with-an-ermine/artist.jpg",
+    "width": 128,
+    "height": 128
+  },
+  {
+    "file": "assets/lady-with-an-ermine/gallery.jpg",
+    "width": 537,
+    "height": 712
+  },
+  {
+    "file": "assets/lady-with-an-ermine/hero-large.jpg",
+    "width": 950,
+    "height": 1120
+  },
+  {
+    "file": "assets/lady-with-an-ermine/hero-small.jpg",
+    "width": 654,
+    "height": 560
+  },
+  {
+    "file": "assets/lady-with-an-ermine/thumbnail.jpg",
+    "width": 327,
+    "height": 420
+  },
+  {
+    "file": "assets/mona-lisa/artist.jpg",
+    "width": 128,
+    "height": 128
+  },
+  {
+    "file": "assets/mona-lisa/gallery.jpg",
+    "width": 509,
+    "height": 712
+  },
+  {
+    "file": "assets/mona-lisa/hero-large.jpg",
+    "width": 950,
+    "height": 1120
+  },
+  {
+    "file": "assets/mona-lisa/hero-small.jpg",
+    "width": 654,
+    "height": 564
+  },
+  {
+    "file": "assets/mona-lisa/thumbnail.jpg",
+    "width": 327,
+    "height": 525
+  },
+  {
+    "file": "assets/penitent-magdalene/artist.jpg",
+    "width": 128,
+    "height": 128
+  },
+  {
+    "file": "assets/penitent-magdalene/gallery.jpg",
+    "width": 573,
+    "height": 712
+  },
+  {
+    "file": "assets/penitent-magdalene/hero-large.jpg",
+    "width": 950,
+    "height": 1120
+  },
+  {
+    "file": "assets/penitent-magdalene/hero-small.jpg",
+    "width": 654,
+    "height": 560
+  },
+  {
+    "file": "assets/penitent-magdalene/thumbnail.jpg",
+    "width": 327,
+    "height": 250
+  },
+  {
+    "file": "assets/starry-night/artist.jpg",
+    "width": 128,
+    "height": 128
+  },
+  {
+    "file": "assets/starry-night/gallery.jpg",
+    "width": 917,
+    "height": 712
+  },
+  {
+    "file": "assets/starry-night/hero-large.jpg",
+    "width": 950,
+    "height": 1120
+  },
+  {
+    "file": "assets/starry-night/hero-small.jpg",
+    "width": 654,
+    "height": 560
+  },
+  {
+    "file": "assets/starry-night/thumbnail.jpg",
+    "width": 327,
+    "height": 250
+  },
+  {
+    "file": "assets/the-basket-of-apples/artist.jpg",
+    "width": 128,
+    "height": 128
+  },
+  {
+    "file": "assets/the-basket-of-apples/gallery.jpg",
+    "width": 869,
+    "height": 712
+  },
+  {
+    "file": "assets/the-basket-of-apples/hero-large.jpg",
+    "width": 950,
+    "height": 1120
+  },
+  {
+    "file": "assets/the-basket-of-apples/hero-small.jpg",
+    "width": 654,
+    "height": 560
+  },
+  {
+    "file": "assets/the-basket-of-apples/thumbnail.jpg",
+    "width": 327,
+    "height": 430
+  },
+  {
+    "file": "assets/the-boy-in-the-red-vest/artist.jpg",
+    "width": 128,
+    "height": 128
+  },
+  {
+    "file": "assets/the-boy-in-the-red-vest/gallery.jpg",
+    "width": 597,
+    "height": 712
+  },
+  {
+    "file": "assets/the-boy-in-the-red-vest/hero-large.jpg",
+    "width": 950,
+    "height": 1120
+  },
+  {
+    "file": "assets/the-boy-in-the-red-vest/hero-small.jpg",
+    "width": 654,
+    "height": 560
+  },
+  {
+    "file": "assets/the-boy-in-the-red-vest/thumbnail.jpg",
+    "width": 327,
+    "height": 260
+  },
+  {
+    "file": "assets/the-great-wave-off-kanagawa/artist.jpg",
+    "width": 128,
+    "height": 128
+  },
+  {
+    "file": "assets/the-great-wave-off-kanagawa/gallery.jpg",
+    "width": 809,
+    "height": 712
+  },
+  {
+    "file": "assets/the-great-wave-off-kanagawa/hero-large.jpg",
+    "width": 950,
+    "height": 1120
+  },
+  {
+    "file": "assets/the-great-wave-off-kanagawa/hero-small.jpg",
+    "width": 654,
+    "height": 560
+  },
+  {
+    "file": "assets/the-great-wave-off-kanagawa/thumbnail.jpg",
+    "width": 327,
+    "height": 280
+  },
+  {
+    "file": "assets/the-night-cafe/artist.jpg",
+    "width": 128,
+    "height": 128
+  },
+  {
+    "file": "assets/the-night-cafe/gallery.jpg",
+    "width": 947,
+    "height": 712
+  },
+  {
+    "file": "assets/the-night-cafe/hero-large.jpg",
+    "width": 950,
+    "height": 1120
+  },
+  {
+    "file": "assets/the-night-cafe/hero-small.jpg",
+    "width": 654,
+    "height": 560
+  },
+  {
+    "file": "assets/the-night-cafe/thumbnail.jpg",
+    "width": 327,
+    "height": 260
+  },
+  {
+    "file": "assets/the-sleeping-gypsy/artist.jpg",
+    "width": 128,
+    "height": 128
+  },
+  {
+    "file": "assets/the-sleeping-gypsy/gallery.jpg",
+    "width": 1107,
+    "height": 712
+  },
+  {
+    "file": "assets/the-sleeping-gypsy/hero-large.jpg",
+    "width": 950,
+    "height": 1120
+  },
+  {
+    "file": "assets/the-sleeping-gypsy/hero-small.jpg",
+    "width": 654,
+    "height": 560
+  },
+  {
+    "file": "assets/the-sleeping-gypsy/thumbnail.jpg",
+    "width": 327,
+    "height": 250
+  },
+  {
+    "file": "assets/the-storm-on-the-sea-of-galilee/artist.jpg",
+    "width": 128,
+    "height": 128
+  },
+  {
+    "file": "assets/the-storm-on-the-sea-of-galilee/gallery.jpg",
+    "width": 597,
+    "height": 712
+  },
+  {
+    "file": "assets/the-storm-on-the-sea-of-galilee/hero-large.jpg",
+    "width": 950,
+    "height": 1120
+  },
+  {
+    "file": "assets/the-storm-on-the-sea-of-galilee/hero-small.jpg",
+    "width": 654,
+    "height": 560
+  },
+  {
+    "file": "assets/the-storm-on-the-sea-of-galilee/thumbnail.jpg",
+    "width": 327,
+    "height": 340
+  },
+  {
+    "file": "assets/the-swing/artist.jpg",
+    "width": 128,
+    "height": 128
+  },
+  {
+    "file": "assets/the-swing/gallery.jpg",
+    "width": 585,
+    "height": 712
+  },
+  {
+    "file": "assets/the-swing/hero-large.jpg",
+    "width": 950,
+    "height": 1120
+  },
+  {
+    "file": "assets/the-swing/hero-small.jpg",
+    "width": 654,
+    "height": 560
+  },
+  {
+    "file": "assets/the-swing/thumbnail.jpg",
+    "width": 327,
+    "height": 340
+  },
+  {
+    "file": "assets/van-gogh-self-portrait/artist.jpg",
+    "width": 128,
+    "height": 128
+  },
+  {
+    "file": "assets/van-gogh-self-portrait/gallery.jpg",
+    "width": 597,
+    "height": 712
+  },
+  {
+    "file": "assets/van-gogh-self-portrait/hero-large.jpg",
+    "width": 950,
+    "height": 1120
+  },
+  {
+    "file": "assets/van-gogh-self-portrait/hero-small.jpg",
+    "width": 654,
+    "height": 560
+  },
+  {
+    "file": "assets/van-gogh-self-portrait/thumbnail.jpg",
+    "width": 327,
+    "height": 500
+  }
+]
