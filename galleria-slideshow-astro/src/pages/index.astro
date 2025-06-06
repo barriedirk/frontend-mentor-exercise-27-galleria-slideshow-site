@@ -14,7 +14,9 @@ import data from "../data/data-with-sizes.json";
             const { small, large } = hero;
 
             const styleImage = `--thumbnail-width:${thumbnail.width}; --thumbnail-height:${thumbnail.height};--hero-small-width:${small.width}; --hero-small-height:${small.height};--hero-large-width:${large.width}; --hero-large-height:${large.height};--grid-area:area-${idx};`;
-            const styleItem = `--grid-area:area-${idx};`;
+
+            const numberSpan = Math.floor(thumbnail.height / 10) + 4;
+            const styleItem = `--grid-area:area-${idx};--grid-span-tablet: span ${numberSpan}`;
 
             return (
               <a
@@ -241,7 +243,7 @@ import data from "../data/data-with-sizes.json";
   }
 
   @media screen and (min-width: 37.5em) {
-    .gallery-masonry {
+    /* .gallery-masonry {
       column-count: 2;
       column-gap: 40px;
     }
@@ -249,10 +251,22 @@ import data from "../data/data-with-sizes.json";
     .gallery-masonry > * {
       break-inside: avoid;
       margin-bottom: 40px;
-    }
+    } */
 
     .gallery__item-link {
       /* max-width: 310px; */
+    }
+
+    .gallery-masonry {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(310px, 1fr));
+      grid-auto-rows: 10px;
+      gap: 0;
+      column-gap: 40px;
+    }
+
+    .gallery__item-link {
+      grid-row-end: var(--grid-span-tablet);
     }
   }
 </style>
