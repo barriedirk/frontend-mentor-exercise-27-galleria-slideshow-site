@@ -6,22 +6,21 @@ import data from "../data/data-with-sizes.json";
 ---
 
 <BaseLayout title="Galleria">
-  <Container className="mt-[20px]">
+  <Container className="mt-[20px] sm:mt-[40px]">
     <section class="gallery">
       <div class="gallery-masonry">
         {
           data.map(({ name, artist, images: { thumbnail, hero } }, idx) => {
-            const { small, large } = hero;
+            const styleImage = `--thumbnail-width:${thumbnail.width}; --thumbnail-height:${thumbnail.height};--grid-area:area-${idx};`;
 
-            const styleImage = `--thumbnail-width:${thumbnail.width}; --thumbnail-height:${thumbnail.height};--hero-small-width:${small.width}; --hero-small-height:${small.height};--hero-large-width:${large.width}; --hero-large-height:${large.height};--grid-area:area-${idx};`;
-
-            const numberSpan = Math.floor(thumbnail.height / 10) + 4;
-            const styleItem = `--grid-area:area-${idx};--grid-span-tablet: span ${numberSpan}`;
+            const numberSpanMd = Math.floor(thumbnail.height / 10) + 4;
+            const numberSpanXl = Math.floor(thumbnail.height / 60) + 1;
+            const styleItem = `--grid-area: ga-${idx};--grid-span-md: span ${numberSpanMd};--grid-span-xl: span ${numberSpanXl};`;
 
             return (
               <a
                 href={`/art/${idx}`}
-                class="gallery__item-link"
+                class={`gallery__item-link gallery__item-${idx}`}
                 style={styleItem}
               >
                 {/* <figure
@@ -42,14 +41,9 @@ import data from "../data/data-with-sizes.json";
                   role="group"
                 >
                   <picture>
-                    <source
-                      media="(min-width: 600px)"
-                      srcset={hero.large.src}
-                    />
                     <img
                       style={styleImage}
                       class="gallery__item--image lazy-image"
-                      data-src={hero.small.src}
                       src={thumbnail.src}
                       alt={`Painting titled "${name}" by ${artist.name}`}
                       loading="lazy"
@@ -60,10 +54,10 @@ import data from "../data/data-with-sizes.json";
                     id={`caption-${idx}`}
                     class="gallery__item--caption flex flex-col gap-3.5 justify-center items-start"
                   >
-                    <span class="gallery__paint-name text-white text-shadow-[1px_1px_rgb(0_0_0_/_0.5)] text-preset-2-mobile">
-                      {name}
+                    <span class="gallery__paint-name text-white text-shadow-[1px_1px_rgb(0_0_0_/_0.5)] text-preset-2-mobile ">
+                      order {idx} / {name}
                     </span>
-                    <span class="gallery__paint-artist text-white-75 text-shadow-[1px_1px_rgb(0_0_0_/_0.5)] text-preset-5 text-preset-5-mobile">
+                    <span class="gallery__paint-artist text-white-75 text-shadow-[1px_1px_rgb(0_0_0_/_0.5)] text-preset-5">
                       {artist.name}
                     </span>
                   </figcaption>
@@ -100,39 +94,14 @@ import data from "../data/data-with-sizes.json";
 <script type="module">
   const observer = new IntersectionObserver(
     (entries, observer) => {
-      // entries.forEach((entry) => {
-      //   if (entry.isIntersecting) {
-      //     const item = entry.target;
-      //     item.classList.add("fade-in");
-      //     observer.unobserve(item); // Stop observing once faded in
-      //   }
-      // });
-
-      // entries.forEach((entry) => {
-      //   if (entry.isIntersecting) {
-      //     entry.target.style.transitionDelay = `${delay * 100}ms`;
-      //     entry.target.classList.add("fade-in");
-      //     observer.unobserve(entry.target);
-      //     delay++;
-      //   }
-      // });
-
       let delay = 0;
 
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const item = entry.target;
 
-          // Add staggered animation delay
           item.style.transitionDelay = `${delay * 100}ms`;
           item.classList.add("fade-in");
-
-          // Lazy load image (swap data-src into src)
-          const img = item.querySelector("img[data-src]");
-          if (img && img.dataset.src) {
-            img.src = img.dataset.src;
-            img.removeAttribute("data-src");
-          }
 
           observer.unobserve(item);
           delay++;
@@ -150,17 +119,13 @@ import data from "../data/data-with-sizes.json";
 </script>
 
 <style>
-  .gallery {
-  }
-
   .gallery-masonry {
-    /* display: grid; */
+    display: grid;
     gap: 40px;
-  }
-
-  .gallery__item-link {
-    /* grid-area: var(--grid-area); */
-    display: inline-block;
+    justify-content: center;
+    width: 100%;
+    max-width: 1360px;
+    margin-inline: auto;
   }
 
   .gallery__item--caption {
@@ -180,12 +145,6 @@ import data from "../data/data-with-sizes.json";
       transform: translateY(0);
     }
   }
-
-  /* .gallery__item {
-    opacity: 0;
-    animation: fadeInUp 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-    will-change: opacity, transform;
-  } */
 
   .gallery__item {
     opacity: 0;
@@ -235,31 +194,15 @@ import data from "../data/data-with-sizes.json";
     object-fit: cover;
   }
 
-  @media screen and (min-width: 37.5em) {
-    .gallery__item--image {
-      /* aspect-ratio: var(--hero-large-width) / var(--hero-large-height); */
-      /* max-width: calc(var(--hero-large-width) * 1px); */
-    }
+  .gallery__item-link {
+    width: 100%;
+    max-width: 500px;
   }
 
-  @media screen and (min-width: 37.5em) {
-    /* .gallery-masonry {
-      column-count: 2;
-      column-gap: 40px;
-    }
-
-    .gallery-masonry > * {
-      break-inside: avoid;
-      margin-bottom: 40px;
-    } */
-
-    .gallery__item-link {
-      /* max-width: 310px; */
-    }
-
+  @media screen and (min-width: 48em) {
     .gallery-masonry {
       display: grid;
-      grid-template-columns: repeat(2, minmax(310px, 1fr));
+      grid-template-columns: repeat(2, minmax(310px, 310px));
       grid-auto-rows: 10px;
       gap: 0;
       column-gap: 40px;
@@ -269,4 +212,149 @@ import data from "../data/data-with-sizes.json";
       grid-row-end: var(--grid-span-tablet);
     }
   }
+
+  @media screen and (min-width: 48em) {
+    .gallery-masonry {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(310px, 310px));
+      grid-auto-rows: 10px;
+      gap: 0;
+      column-gap: 40px;
+    }
+
+    .gallery__item-link {
+      grid-row-end: var(--grid-span-md);
+    }
+  }
+
+  @media screen and (min-width: 50em) {
+    .gallery-masonry {
+      grid-template-columns: repeat(2, minmax(310px, 420px));
+      grid-auto-rows: 11px;
+    }
+  }
+
+  @media screen and (min-width: 52em) {
+    .gallery-masonry {
+      grid-auto-rows: 12px;
+    }
+  }
+
+  @media screen and (min-width: 60.25em) {
+    .gallery-masonry {
+      grid-auto-rows: 13px;
+    }
+  }
+
+  @media screen and (min-width: 63.75em) {
+    .gallery-masonry {
+      grid-template-columns: repeat(4, minmax(227px, 310px));
+      grid-auto-rows: 7px;
+    }
+  }
+
+  @media screen and (min-width: 66em) {
+    .gallery-masonry {
+      grid-auto-rows: 7px;
+    }
+  }
+
+  @media screen and (min-width: 75em) {
+    .gallery-masonry {
+      grid-auto-rows: 9px;
+    }
+  }
+
+  @media screen and (min-width: 85em) {
+    .gallery-masonry {
+      grid-template-columns: repeat(4, 310px);
+      grid-auto-rows: 11px;
+    }
+  }
+
+  @media screen and (min-width: 90em) {
+    .gallery__item-link {
+      grid-row-end: var(--grid-span-xl);
+    }
+
+    .gallery-masonry {
+      grid-auto-rows: 60px;
+    }
+
+    .gallery__item-4 {
+      margin-top: -8px;
+    }
+
+    .gallery__item-5 {
+      grid-column: 2;
+      grid-row: 8;
+    }
+
+    .gallery__item-6 {
+      margin-top: 10px;
+    }
+
+    .gallery__item-7 {
+      margin-top: -25px;
+    }
+
+    .gallery__item-8 {
+      grid-column: 1;
+      grid-row: 12;
+    }
+
+    .gallery__item-9 {
+      grid-column: 2;
+      grid-row: 13;
+    }
+
+    .gallery__item-10 {
+      grid-column: 4;
+      grid-row: 11;
+      margin-top: -40px;
+    }
+
+    .gallery__item-11 {
+      grid-column: 1;
+      grid-row: 19;
+    }
+
+    .gallery__item-12 {
+      grid-column: 2;
+      grid-row: 18;
+      margin-top: -6px;
+    }
+
+    .gallery__item-13 {
+      grid-column: 3;
+      grid-row: 15;
+      margin-top: -11px;
+    }
+
+    .gallery__item-14 {
+      grid-column: 4;
+      grid-row: 18;
+      margin-top: -16px;
+    }
+  }
+
+  /* @media screen and (min-width: 90em) {
+    .gallery__item-link {
+      grid-area: var(--grid-area);
+      grid-row-end: span 0;
+    }
+
+    .gallery-masonry {
+      grid-auto-rows: initial;
+      gap: 40px;
+      grid-template-areas:
+        "ga-0  ga-1  ga-2  ga-3"
+        "ga-4  ga-1  ga-6  ga-3"
+        "ga-4  ga-1  ga-6  ga-3"
+        "ga-4  ga-5  ga-6  ga-7"
+        "ga-8  ga-5  ga-6  ga-7"
+        "ga-8  ga-9  ga-13 ga-10"
+        "ga-11 ga-12 ga-13 ga-14";
+    }
+  } */
 </style>
