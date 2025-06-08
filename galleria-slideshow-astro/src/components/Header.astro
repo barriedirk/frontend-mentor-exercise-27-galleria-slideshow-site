@@ -15,12 +15,12 @@ const { urlActive = "" } = Astro.props;
   <Container
     className="flex flex-row justify-between items-center h-full border-b border-gray-200"
   >
-    <a href="./" class="header__logo" aria-label="Go to homepage">
+    <a href="/" class="header__logo" aria-label="Go to homepage">
       <svg
         class="logo w-[113px] h-[32px] basis-[32px] lg:w-[170px] lg:h-[48px] lg:basis-[48px] inline-block flex-none"
         aria-hidden="true"
       >
-        <use href="./assets/shared/logo.svg#logo-galleria"></use>
+        <use href="/assets/shared/logo.svg#logo-galleria"></use>
       </svg>
     </a>
     <div id="slideshow-announcement" aria-live="polite" class="sr-only"></div>
@@ -44,10 +44,8 @@ const { urlActive = "" } = Astro.props;
       const isPressed = toggleBtn.getAttribute("aria-pressed") === "true";
       const newState = !isPressed;
 
-      // Toggle aria-pressed state
       toggleBtn.setAttribute("aria-pressed", String(!isPressed));
 
-      // Optional: change text or class based on state
       toggleBtn.textContent = isPressed ? "START SLIDESHOW" : "STOP SLIDESHOW";
       toggleBtn.setAttribute(
         "aria-label",

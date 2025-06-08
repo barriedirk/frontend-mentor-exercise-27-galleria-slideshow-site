@@ -10,7 +10,7 @@ import data from "../data/data-with-sizes.json";
     <section class="gallery">
       <div class="gallery-masonry">
         {
-          data.map(({ name, artist, images: { thumbnail, hero } }, idx) => {
+          data.map(({ name, artist, images: { thumbnail } }, idx) => {
             const styleImage = `--thumbnail-width:${thumbnail.width}; --thumbnail-height:${thumbnail.height};--grid-area:area-${idx};`;
 
             const numberSpanMd = Math.floor(thumbnail.height / 10) + 4;
@@ -40,7 +40,7 @@ import data from "../data/data-with-sizes.json";
                   data-item-idx={idx}
                   role="group"
                 >
-                  <picture>
+                  <picture class="gallery__picture relative">
                     <img
                       style={styleImage}
                       class="gallery__item--image lazy-image"
@@ -52,12 +52,12 @@ import data from "../data/data-with-sizes.json";
 
                   <figcaption
                     id={`caption-${idx}`}
-                    class="gallery__item--caption flex flex-col gap-3.5 justify-center items-start"
+                    class="gallery__item--caption flex flex-col gap-2 justify-center items-start"
                   >
-                    <span class="gallery__paint-name text-white text-shadow-[1px_1px_rgb(0_0_0_/_0.5)] text-preset-2-mobile ">
-                      order {idx} / {name}
+                    <span class="gallery__paint-name text-white text-preset-2-mobile ">
+                      {name}
                     </span>
-                    <span class="gallery__paint-artist text-white-75 text-shadow-[1px_1px_rgb(0_0_0_/_0.5)] text-preset-5">
+                    <span class="gallery__paint-artist text-white-75 text-preset-5">
                       {artist.name}
                     </span>
                   </figcaption>
@@ -189,9 +189,30 @@ import data from "../data/data-with-sizes.json";
   }
 
   .gallery__item--image {
+    position: relative;
     aspect-ratio: var(--thumbnail-width) / var(--thumbnail-height);
     width: 100%;
     object-fit: cover;
+  }
+
+  .gallery__item-link {
+    position: relative;
+  }
+
+  .gallery__picture::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient);
+    opacity: 0.2;
+  }
+
+  .gallery__picture:hover::after {
+    background: var(--gradient1);
+    opacity: 0.6;
   }
 
   .gallery__item-link {
@@ -337,24 +358,4 @@ import data from "../data/data-with-sizes.json";
       margin-top: -16px;
     }
   }
-
-  /* @media screen and (min-width: 90em) {
-    .gallery__item-link {
-      grid-area: var(--grid-area);
-      grid-row-end: span 0;
-    }
-
-    .gallery-masonry {
-      grid-auto-rows: initial;
-      gap: 40px;
-      grid-template-areas:
-        "ga-0  ga-1  ga-2  ga-3"
-        "ga-4  ga-1  ga-6  ga-3"
-        "ga-4  ga-1  ga-6  ga-3"
-        "ga-4  ga-5  ga-6  ga-7"
-        "ga-8  ga-5  ga-6  ga-7"
-        "ga-8  ga-9  ga-13 ga-10"
-        "ga-11 ga-12 ga-13 ga-14";
-    }
-  } */
 </style>

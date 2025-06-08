@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../../layout/BaseLayout.astro";
+import Container from "../../components/Container.astro";
+import Galllery from "../../components/Galllery.astro";
+
+import data from "../../data/data-with-sizes.json";
+
+export function getStaticPaths() {
+  const paths = Array.from({ length: 15 }, (_, idx) => ({
+    params: { id: idx.toString() },
+  }));
+
+  return paths;
+}
+
+const { id } = Astro.params;
+const art = data[Number(id)];
+---
+
+<BaseLayout title={`${art.name}`}>
+  <Container className="mt-[20px] sm:mt-[40px]">
+    <Galllery idx={Number(id)} />
+  </Container>
+</BaseLayout>
