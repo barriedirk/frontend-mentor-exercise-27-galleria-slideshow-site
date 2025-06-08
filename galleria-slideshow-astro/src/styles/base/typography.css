@@ -36,7 +36,7 @@
   font-size: 0.5625rem;
   line-height: 125%;
   letter-spacing: 0.125rem;
-} 
+}
 
 .text-preset-1 {
   font-family: var(--ff);
@@ -134,3 +134,20 @@
   letter-spacing: 0.125rem;
 }
 
+@media screen and (max-width: 38em) {
+  .text-preset-1 {
+    font-family: var(--ff);
+    font-weight: var(--fw-bold);
+    font-size: 6.25rem;
+    line-height: 100%;
+    letter-spacing: 0rem;
+  }
+
+  .text-preset-2 {
+    font-family: var(--ff);
+    font-weight: var(--fw-bold);
+    font-size: 1.5rem;
+    line-height: 125%;
+    letter-spacing: 0rem;
+  }
+}
