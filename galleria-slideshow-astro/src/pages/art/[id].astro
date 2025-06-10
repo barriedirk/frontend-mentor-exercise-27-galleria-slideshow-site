@@ -17,7 +17,7 @@ const { id } = Astro.params;
 const art = data[Number(id)];
 ---
 
-<BaseLayout title={`${art.name}`}>
+<BaseLayout title={`${art.name}`} showFooter={false} isStartSlideShow={false}>
   <Container className="mt-[20px] sm:mt-[40px]">
     <Slide idx={Number(id)} />
   </Container>

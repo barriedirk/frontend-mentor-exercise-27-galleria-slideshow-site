@@ -7,6 +7,7 @@
   --clr-white: rgb(255, 255, 255);
   --clr-white-75: rgba(255, 255, 255, 0.75);
   --clr-black: rgb(0, 0, 0);
+  --clr-black-75: rgba(0, 0, 0, 0.75);
 
   --gradient: linear-gradient(to bottom, var(--clr-white) 0, var(--clr-black) 84%);
   --gradient1: linear-gradient(to bottom, var(--clr-white) 0, var(--clr-white) 50%, var(--clr-black) 84%);

@@ -23,16 +23,6 @@ import data from "../data/data-with-sizes.json";
                 class={`gallery__item-link gallery__item-${idx}`}
                 style={styleItem}
               >
-                {/* <figure
-  role="button"
-  tabindex="0"
-  aria-haspopup="dialog"
-  aria-controls={`modal-${idx}`}
-  aria-label={`View details about "${name}" by ${artist.name}`}
-  onclick="openModal(idx)"  <!-- or use Astro/JS handler -->
-  onkeypress="if(event.key==='Enter' || event.key===' ') openModal(idx)"
-> */}
-
                 <figure
                   id={`galleryItem${idx}`}
                   class="gallery__item relative"
@@ -69,27 +59,7 @@ import data from "../data/data-with-sizes.json";
       </div>
     </section>
   </Container>
-
-  <!-- <div
-  id={`modal-${idx}`}
-  role="dialog"
-  aria-modal="true"
-  aria-labelledby={`modal-title-${idx}`}
-  aria-describedby={`modal-desc-${idx}`}
->
-  <h2 id={`modal-title-${idx}`}>{name}</h2>
-  <p id={`modal-desc-${idx}`}>{artist.name}</p>
-  Close button should return focus to the figure -->
 </BaseLayout>
-
-<!-- <script type="module">
-  window.addEventListener("load", () => {
-    document.querySelectorAll(".gallery__item img").forEach((img) => {
-      const figure = img.closest(".gallery__item");
-      if (figure) figure.classList.add("fade-in");
-    });
-  });
-</script> -->
 
 <script type="module">
   const observer = new IntersectionObserver(
@@ -109,7 +79,7 @@ import data from "../data/data-with-sizes.json";
       });
     },
     {
-      threshold: 0.1, // Trigger when 10% visible
+      threshold: 0.1,
     }
   );
 
@@ -210,7 +180,7 @@ import data from "../data/data-with-sizes.json";
     opacity: 0.2;
   }
 
-  .gallery__picture:hover::after {
+  .gallery__picture:is(:hover, :active, :focus-visible)::after {
     background: var(--gradient1);
     opacity: 0.6;
   }

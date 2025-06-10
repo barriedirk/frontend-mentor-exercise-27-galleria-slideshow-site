@@ -9,7 +9,6 @@
 .text-grey-150 {
   color: var(--clr-grey-150);
 }
-
 .text-grey-100 {
   color: var(--clr-grey-100);
 }
@@ -24,6 +23,10 @@
 
 .text-black {
   color: var(--clr-black);
+}
+
+.text-black-75 {
+  color: var(--clr-black-75);
 }
 
 .bg-grey-400 {
@@ -52,4 +55,12 @@
 
 .bg-gradient {
   background: var(--gradient);
+}
+
+.bold {
+  font-weight: var(--fw-bold);
+}
+
+.normal {
+  font-weight: var(--fw-normal);
 }

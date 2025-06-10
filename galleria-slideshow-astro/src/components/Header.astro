@@ -3,9 +3,10 @@ import Container from "./Container.astro";
 
 interface Props {
   urlActive?: string;
+  isStartSlideShow?: boolean;
 }
 
-const { urlActive = "" } = Astro.props;
+const { urlActive = "", isStartSlideShow = true } = Astro.props;
 ---
 
 <header
@@ -27,11 +28,12 @@ const { urlActive = "" } = Astro.props;
     <button
       id="slideshow-toggle"
       type="button"
-      aria-pressed="false"
-      aria-label="Start image slideshow"
+      aria-pressed={`${isStartSlideShow ? "false" : "true"}`}
+      aria-label={`${isStartSlideShow ? "Start image slideshow" : "Stop image slideshow"}`}
       class="header__start-slideshow text-grey-400 text-preset-6 text-preset-5 focus:outline-black focus:outline-2 focus:outline-solid"
-      >START SLIDESHOW</button
     >
+      {isStartSlideShow ? "START SLIDESHOW" : "STOP SLIDESHOW"}
+    </button>
   </Container>
 </header>
 

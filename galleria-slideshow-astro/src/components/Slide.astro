@@ -13,7 +13,7 @@ const { small, large } = art.images.hero;
 ---
 
 <section
-  class="slides"
+  class="slides relative"
   role="region"
   aria-labelledby="slides__main-title"
   aria-describedby="slide__description"
@@ -21,77 +21,113 @@ const { small, large } = art.images.hero;
   <h1 id="slides__main-title" class="sr-only">
     {`Paiting titled ${name} by ${artist.name}`}
   </h1>
-  <figure id="slide__figure" class="slide__figure relative">
-    <picture id="slide__picture">
-      <source
-        id="slide__picture-source"
-        media="(min-width: 600px)"
-        srcset={small.src}
-      />
-      <img
-        id="slide__picture-img"
-        class="slide__picture-img"
-        src={large.src}
-        alt={`Paiting titled ${name} by ${artist.name}`}
-      />
-    </picture>
-    <figcaption id="slide__figcaption" class="slide__figcaption">
-      <button
-        type="button"
-        id="slide__view-image"
-        class="slide__view-image text-preset-7 flex flex-row justify-center items-center gap-2 p-4"
-        aria-label={`View source of painting ${name} by ${artist.name}`}
-      >
-        <svg
-          class="w-[12px] h-[12px] basis-[12px] text-white"
-          aria-hidden="true"
+  <div class="slide__header">
+    <figure id="slide__figure" class="slide__figure relative">
+      <picture id="slide__picture" class="slide__picture">
+        <source
+          id="slide__picture-source"
+          media="(min-width: 600px)"
+          srcset={large.src}
+        />
+        <img
+          id="slide__picture-img"
+          class="slide__picture-img"
+          src={small.src}
+          alt={`Paiting titled ${name} by ${artist.name}`}
+        />
+      </picture>
+      <figcaption id="slide__figcaption" class="slide__figcaption absolute">
+        <button
+          type="button"
+          id="slide__view-image"
+          class="slide__view-image text-preset-7 flex flex-row justify-center items-center gap-2 p-3.5"
+          aria-label={`View source of painting ${name} by ${artist.name}`}
         >
-          <use href="/assets/shared/icon-view-image.svg#icon-view"></use>
-        </svg>
-        <span>VIEW SOURCE</span>
-      </button>
-    </figcaption>
-  </figure>
-  <div id="slide__author" class="slide__author">
-    <h2 id="slide__author-paint" class="slide__author-paint text-preset-2">
-      {name}
-    </h2>
-    <h3 class="slide__author-name text-preset-5">{artist.name}</h3>
-    <img
-      class="slide__author-portrait"
-      src={artist.image.src}
-      alt={`Portrait of ${artist.name}`}
-      aria-hidden="true"
-    />
+          <svg
+            class="w-[12px] h-[12px] basis-[12px] text-white"
+            aria-hidden="true"
+          >
+            <use href="/assets/shared/icon-view-image.svg#icon-view"></use>
+          </svg>
+          <span>VIEW SOURCE</span>
+        </button>
+      </figcaption>
+    </figure>
+    <div class="slide__meta-data">
+      <div id="slide__paint" class="slide__paint relative">
+        <h2
+          id="slide__paint-name"
+          class="slide__paint-name text-preset-2 text-black"
+          aria-label={`${name}`}
+        >
+          {name}
+        </h2>
+        <h3
+          class="slide__paint-artist text-preset-4 text-grey-400"
+          aria-label={`${artist.name}`}
+        >
+          {artist.name}
+        </h3>
+      </div>
+      <div class="slide__portrait">
+        <img
+          id="slide__author-portrait"
+          class="slide__author-portrait"
+          src={artist.image.src}
+          alt={`Portrait of ${artist.name}`}
+          aria-hidden="true"
+        />
+      </div>
+    </div>
   </div>
-  <h3 id="slide__year" class="slide__year text-preset-1">{year}</h3>
-  <p id="slide__description" class="slide__description text-preset-3-mobile">
-    {description}
-  </p>
-  <p class="slide__source">
-    <a
-      id="slide__source-link"
-      href={source}
-      class="slide__source-link text-preset-5-mobile"
-      target="_blank"
-      rel="noopener"
-      aria-label={`Visit external source page for ${name} by ${artist.name}`}
-    >
-      Go to source
-    </a>
-  </p>
-  <footer class="slide__footer flex flex-row justify-between items-center">
+  <div class="slide__data relative">
+    <div class="slide__year-container">
+      <h3 id="slide__year" class="slide__year text-preset-1 text-grey-100 bold">
+        {year}
+      </h3>
+    </div>
+    <div class="slide__description-container">
+      <p
+        id="slide__description"
+        class="slide__description text-preset-3-mobile text-grey-400"
+      >
+        {description}
+      </p>
+      <p class="slide__source my-[68px] uppercase">
+        <a
+          id="slide__source-link"
+          href={source}
+          class="slide__source-link text-preset-5-mobile"
+          target="_blank"
+          rel="noopener"
+          aria-label={`Visit external source page for ${name} by ${artist.name}`}
+        >
+          Go to source
+        </a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="slide__footer py-[20px]">
+  <div class="slide__progress-container">
+    <progress class="slide__progress" max="14" value="4"></progress>
+  </div>
+
+  <div class="flex flex-row justify-between items-center">
     <div class="slide__footer-information">
-      <h3 class="text-preset-3">{name}</h3>
-      <p class="text-preset-5">{artist.name}</p>
+      <h3 class="text-preset-3 text-black">{name}</h3>
+      <p class="text-preset-5 text-black-75">{artist.name}</p>
     </div>
     <div
       class="slide__footer-handlers flex flex-row justify-center items-center gap-4"
     >
       <button
         id="slide__handler-btn-left"
+        class="slide__handler-btn"
         aria-label="Previous painting"
         type="button"
+        disabled
       >
         <svg class="slide__handler-back w-[26px] h-[24px]" aria-hidden="true">
           <use href="/assets/shared/icon-back-button.svg#icon-back"></use>
@@ -99,28 +135,210 @@ const { small, large } = art.images.hero;
       </button>
       <button
         id="slide__handler-btn-next"
+        class="slide__handler-btn"
         aria-label="Next painting"
         type="button"
       >
-        <svg
-          class="slide__handler-next"
-          class="w-[26px] h-[24px]"
-          aria-hidden="true"
-        >
+        <svg class="slide__handler-next w-[26px] h-[24px]" aria-hidden="true">
           <use href="/assets/shared/icon-next-button.svg#icon-next"></use>
         </svg>
       </button>
     </div>
-  </footer>
+  </div>
+
+  <style>
+    .slide__progress-container {
+      width: 100%;
+      margin: 1rem auto;
+    }
+
+    .slide__progress {
+      width: 100%;
+      height: 8px;
+      appearance: none;
+      -webkit-appearance: none;
+      background-color: var(--clr-grey-200);
+      border: none;
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    /* Chrome & Safari: progress bar styling */
+    .slide__progress::-webkit-progress-bar {
+      background-color: var(--clr-grey-200);
+    }
+
+    .slide__progress::-webkit-progress-value {
+      background-color: var(--clr-black);
+      border-radius: 9999px;
+    }
+
+    /* Firefox */
+    .slide__progress::-moz-progress-bar {
+      background-color: var(--clr-black);
+      border-radius: 9999px;
+    }
+
+    .slides {
+      /* max-width: 1360px; */
+      max-width: 715px;
+      width: 100%;
+      margin-inline: auto;
+    }
+
+    .slide__header {
+      max-width: 848px;
+      width: 100%;
+    }
+
+    .slide__figcaption {
+      top: 16px;
+      left: 16px;
+    }
+
+    .slide__view-image {
+      background-color: var(--clr-black);
+      color: var(--clr-white);
+    }
+
+    .slide__paint {
+      background-color: var(--clr-white);
+      margin-top: -54px;
+      max-width: 282px;
+      width: 100%;
+      padding-inline: 26px;
+      padding-block: 30px;
+    }
+
+    .slide__author-portrait {
+      aspect-ratio: 1 / 1;
+      width: 64px;
+    }
+
+    .slide__year-container {
+      text-align: right;
+      line-height: 1;
+    }
+
+    .slide__year {
+      line-height: inherit !important;
+    }
+
+    .slide__description-container {
+      margin-top: -44px;
+    }
+
+    .slide__handler-btn:disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+      color: var(--clr-grey-200);
+    }
+
+    .slide__progress {
+      width: 100%;
+      height: 2px;
+    }
+
+    @media screen and (min-width: 37.5em) {
+      .slide__figure {
+        max-width: 475px;
+      }
+
+      .slide__figcaption {
+        top: initial;
+        left: 16px;
+        bottom: 16px;
+      }
+
+      .slide__meta-data {
+        position: absolute;
+        top: 0;
+        left: 350px;
+      }
+
+      .slide__paint {
+        background-color: var(--clr-white);
+        margin-top: 0;
+        max-width: 445px;
+        padding: 0 0 60px 60px;
+      }
+
+      .slide__portrait {
+        text-align: right;
+        padding-right: 60px;
+      }
+
+      .slide__year-container {
+        margin-top: 60px;
+      }
+
+      .slide__author-portrait {
+        display: inline-block;
+        width: 128px;
+      }
+
+      .slide__year-container {
+        text-align: left;
+      }
+
+      .slide__description-container {
+        padding-left: 120px;
+        margin-top: -140px;
+      }
+    }
+
+    @media screen and (min-width: 86em) {
+      .slides {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        max-width: 1380px;
+        margin-bottom: 80px;
+      }
+
+      .slide__meta-data {
+        max-width: 450px;
+        width: 100%;
+        /* background-color: red; */
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .slide__portrait {
+        text-align: left;
+        padding-left: 142px;
+      }
+
+      .slide__author-portrait {
+        transform: translateY(60%);
+      }
+
+      .slide__description-container {
+        padding-left: 0;
+      }
+
+      .slide__year-container {
+        margin-top: 0;
+      }
+
+      .slide__source {
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+      }
+
+      .slide__description {
+        max-width: 350px;
+      }
+
+      .slide__wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+  </style>
 </section>
-
-<style>
-  .slide__view-image {
-    background-color: var(--clr-black);
-    color: var(--clr-white);
-  }
-
-  .slide__author {
-    background-color: var(--clr-white);
-  }
-</style>
