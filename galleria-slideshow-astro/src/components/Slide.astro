@@ -9,7 +9,12 @@ import data from "../data/data-with-sizes.json";
 
 const art = data[idx];
 const { name, artist, year, description, source } = art;
-const { small, large } = art.images.hero;
+const {
+  hero: { small, large },
+  gallery,
+} = art.images;
+const progressMax = data.length;
+const progressIdx = idx + 1;
 ---
 
 <section
@@ -37,11 +42,14 @@ const { small, large } = art.images.hero;
         />
       </picture>
       <figcaption id="slide__figcaption" class="slide__figcaption absolute">
-        <button
-          type="button"
+        <a
           id="slide__view-image"
           class="slide__view-image text-preset-7 flex flex-row justify-center items-center gap-2 p-3.5"
           aria-label={`View source of painting ${name} by ${artist.name}`}
+          href={gallery.src}
+          data-width={gallery.width}
+          data-height={gallery.height}
+          target="_blank"
         >
           <svg
             class="w-[12px] h-[12px] basis-[12px] text-white"
@@ -50,7 +58,7 @@ const { small, large } = art.images.hero;
             <use href="/assets/shared/icon-view-image.svg#icon-view"></use>
           </svg>
           <span>VIEW SOURCE</span>
-        </button>
+        </a>
       </figcaption>
     </figure>
     <div class="slide__meta-data">
@@ -111,7 +119,8 @@ const { small, large } = art.images.hero;
 
 <section class="slide__footer py-[20px]">
   <div class="slide__progress-container">
-    <progress class="slide__progress" max="14" value="4"></progress>
+    <progress class="slide__progress" max={progressMax} value={progressIdx}
+    ></progress>
   </div>
 
   <div class="flex flex-row justify-between items-center">
@@ -123,11 +132,11 @@ const { small, large } = art.images.hero;
       class="slide__footer-handlers flex flex-row justify-center items-center gap-4"
     >
       <button
-        id="slide__handler-btn-left"
+        id="slide__handler-btn-back"
         class="slide__handler-btn"
         aria-label="Previous painting"
         type="button"
-        disabled
+        data-direction="back"
       >
         <svg class="slide__handler-back w-[26px] h-[24px]" aria-hidden="true">
           <use href="/assets/shared/icon-back-button.svg#icon-back"></use>
@@ -138,6 +147,7 @@ const { small, large } = art.images.hero;
         class="slide__handler-btn"
         aria-label="Next painting"
         type="button"
+        data-direction="next"
       >
         <svg class="slide__handler-next w-[26px] h-[24px]" aria-hidden="true">
           <use href="/assets/shared/icon-next-button.svg#icon-next"></use>
@@ -146,7 +156,77 @@ const { small, large } = art.images.hero;
     </div>
   </div>
 
+  <script define:vars={{ progressMax, progressIdx, idx }}>
+    const initializeSlide = ({ idx, count }) => {
+      const baseEl = document.querySelector("base[href]");
+      const baseHref = baseEl?.href ?? "/";
+
+      const $btnBack = document.getElementById("slide__handler-btn-back");
+      const $btnNext = document.getElementById("slide__handler-btn-next");
+      const $toggle = document.getElementById("slideshow-toggle");
+      const $viewSource = document.getElementById("slide__view-image");
+
+      $viewSource.addEventListener("click", (evt) => {
+        evt.preventDefault();
+        const href = $viewSource.getAttribute("href");
+        const width = $viewSource.getAttribute("data-width");
+        const height = $viewSource.getAttribute("data-height");
+        const $dialog = document.getElementById("modal-dialog");
+
+        const html = `
+          <img class="gallery__image" src="${href}" style='margin: auto;aspect-ratio: ${width} / ${height}' />
+        `;
+
+        $dialog.innerHTML = html;
+
+        $dialog.showModal();
+      });
+
+      $toggle.addEventListener("click", () => {
+        window.location.replace(`${baseHref}`);
+      });
+
+      if (idx <= 0) {
+        $btnBack.setAttribute("disabled", true);
+      }
+
+      if (idx >= count - 1) {
+        $btnNext.setAttribute("disabled", true);
+      }
+
+      [$btnBack, $btnNext].forEach(($btn) => {
+        $btn.addEventListener("click", (ev) => {
+          const direction = $btn.getAttribute("data-direction");
+
+          console.log({ direction });
+
+          switch (direction) {
+            case "back":
+              window.location.replace(`${baseHref}art/${idx - 1}`);
+
+              break;
+            case "next":
+              window.location.replace(`${baseHref}art/${idx + 1}`);
+
+              break;
+          }
+        });
+      });
+    };
+
+    initializeSlide({ count: progressMax, idx });
+
+    document.addEventListener("astro:after-swap", () => {
+      initializeSlide({ count: progressMax, idx });
+    });
+  </script>
+
   <style>
+    .gallery__image {
+      height: 100%;
+      width: auto;
+    }
+
     .slide__progress-container {
       width: 100%;
       margin: 1rem auto;

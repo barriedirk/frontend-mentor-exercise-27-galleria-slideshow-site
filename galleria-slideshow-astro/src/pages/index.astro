@@ -6,7 +6,7 @@ import data from "../data/data-with-sizes.json";
 ---
 
 <BaseLayout title="Galleria">
-  <Container className="mt-[20px] sm:mt-[40px]">
+  <Container className="mt-[20px] sm:mt-[40px] clear-end">
     <section class="gallery">
       <div class="gallery-masonry">
         {
@@ -62,29 +62,37 @@ import data from "../data/data-with-sizes.json";
 </BaseLayout>
 
 <script type="module">
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      let delay = 0;
+  const initializeGallery = () => {
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        let delay = 0;
 
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const item = entry.target;
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const item = entry.target;
 
-          item.style.transitionDelay = `${delay * 100}ms`;
-          item.classList.add("fade-in");
+            item.style.transitionDelay = `${delay * 100}ms`;
+            item.classList.add("fade-in");
 
-          observer.unobserve(item);
-          delay++;
-        }
-      });
-    },
-    {
-      threshold: 0.1,
-    }
-  );
+            observer.unobserve(item);
+            delay++;
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
 
-  document.querySelectorAll(".gallery__item").forEach((item) => {
-    observer.observe(item);
+    document.querySelectorAll(".gallery__item").forEach((item) => {
+      observer.observe(item);
+    });
+  };
+
+  initializeGallery();
+
+  document.addEventListener("astro:after-swap", () => {
+    initializeGallery();
   });
 </script>
 

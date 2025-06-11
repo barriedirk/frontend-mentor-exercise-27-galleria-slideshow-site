@@ -7,6 +7,8 @@ interface Props {
   isStartSlideShow?: boolean;
 }
 
+import { ClientRouter } from "astro:transitions";
+
 import "../styles/global.css";
 
 import Header from "../components/Header.astro";
@@ -65,7 +67,17 @@ className += " flex flex-col";
       }
     </script>
 
+    <!-- dialog-polyfill from Google. To mimics native -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/dialog-polyfill@0.5.6/dist/dialog-polyfill.css"
+    />
+    <script
+      src="https://unpkg.com/dialog-polyfill@0.5.6/dist/dialog-polyfill.js"
+    ></script>
+
     <title>{title}</title>
+    <ClientRouter />
   </head>
   <body class={className}>
     <Header isStartSlideShow={isStartSlideShow} />
@@ -73,5 +85,40 @@ className += " flex flex-col";
       <slot />
     </main>
     {showFooter && <Footer />}
+
+    <dialog id="modal-dialog" class="modal-dialog"></dialog>
   </body>
 </html>
+
+<script>
+  const initializePage = () => {
+    window.addEventListener("load", () => {
+      document.body.classList.add("fade-in");
+    });
+
+    const $dialog = document.querySelector(
+      "#modal-dialog"
+    ) as HTMLDialogElement;
+
+    if (!!$dialog) {
+      // if (!$dialog?.showModal) {
+      //@todo, review
+      // dialogPolyfill.registerDialog($dialog);
+      // }
+
+      $dialog.addEventListener("click", (event) => {
+        if (event.target === $dialog) {
+          $dialog.close();
+        }
+      });
+    }
+
+    document.addEventListener("astro:after-swap", () => {
+      setTimeout(() => {
+        document.querySelector("body")!.classList.add("fade-in");
+      }, 300);
+    });
+  };
+
+  initializePage();
+</script>
