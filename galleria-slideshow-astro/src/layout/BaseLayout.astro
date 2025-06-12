@@ -15,6 +15,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 const isDev = process.env.NODE_ENV === "development";
+// const base = "/";
 const base = isDev
   ? "/"
   : "https://barriedirk.github.io/frontend-mentor-exercise-27-galleria-slideshow-site/";
@@ -40,7 +41,7 @@ className += " flex flex-col";
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="/assets/favicon-32x32.png"
+      href="./assets/favicon-32x32.png"
     />
 
     <meta name="author" content="Barrie Freyre" />
@@ -91,7 +92,7 @@ className += " flex flex-col";
     </main>
     {showFooter && <Footer />}
 
-    <dialog id="modal-dialog" class="modal-dialog">
+    <dialog id="modal-dialog" class="modal-dialog hide-scrollbar">
       <form method="dialog" class="text-right mb-2">
         <button
           class="modal-dialog-button text-preset-3-mobile uppercase"

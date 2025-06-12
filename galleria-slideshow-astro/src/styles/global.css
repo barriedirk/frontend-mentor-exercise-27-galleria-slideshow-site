@@ -19,7 +19,16 @@ body.fade-in {
   opacity: 1;
 }
 
+dialog.modal-dialog::-webkit-scrollbar {
+  /* Chrome, Safari, Opera */
+  display: none;           
+}
+
 dialog.modal-dialog {
+  /* Firefox */
+  scrollbar-width: none;   
+  /* IE and Edge */
+  -ms-overflow-style: none; 
   color: var(--clr-grey-200);
   background-color: transparent;
   border: none;

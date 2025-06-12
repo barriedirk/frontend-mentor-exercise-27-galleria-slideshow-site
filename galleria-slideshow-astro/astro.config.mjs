@@ -11,7 +11,10 @@ export default defineConfig({
 
   // site: "https://barriedirk.github.io",
   // base: "frontend-mentor-exercise-27-galleria-slideshow-site",
-
+  compressHTML: false,
+  build: {
+    inlineStylesheets: "always",
+  },
   vite: {
     plugins: [tailwindcss()],
   },
