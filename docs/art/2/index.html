@@ -1,0 +1,123 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta name="generator" content="Astro v5.8.1"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png"><meta name="author" content="Barrie Freyre"><base href="/frontend-mentor-exercise-27-galleria-slideshow-site/"><meta name="linkedin" content="https://www.linkedin.com/in/barriefreyre/"><meta name="github" content="https://github.com/barriedirk"><meta name="frontendmentor" content="https://www.frontendmentor.io/profile/barriedirk"><link rel="me" href="https://www.linkedin.com/in/barriefreyre/"><link rel="me" href="https://github.com/barriedirk"><link rel="me" href="https://www.frontendmentor.io/profile/barriedirk"><script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Barrie Freyre",
+        "url": "",
+        "sameAs": [
+          "https://www.linkedin.com/in/barriefreyre/",
+          "https://github.com/barriedirk",
+          "https://www.frontendmentor.io/profile/barriedirk"
+        ]
+      }
+    </script><!-- dialog-polyfill from Google. To mimics native --><link rel="stylesheet" href="https://unpkg.com/dialog-polyfill@0.5.6/dist/dialog-polyfill.css"><script type="module">const e=()=>{window.addEventListener("load",()=>{document.body.classList.add("fade-in")})};e();document.addEventListener("astro:after-swap",()=>{setTimeout(()=>{document.querySelector("body").classList.add("fade-in")},300)});</script><title>Frontend Mentor | Galleria - Guernica</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CtSceO8m.js"></script><link rel="stylesheet" href="/_astro/_id_.D2fUZb3S.css">
+<style>.gallery__image[data-astro-cid-5tozoqgj]{height:100%;width:auto}.slide__progress-container[data-astro-cid-5tozoqgj]{width:100%;margin:1rem auto}.slide__progress[data-astro-cid-5tozoqgj]{width:100%;height:8px;appearance:none;-webkit-appearance:none;background-color:var(--clr-grey-200);border:none;border-radius:9999px;overflow:hidden}.slide__progress[data-astro-cid-5tozoqgj]::-webkit-progress-bar{background-color:var(--clr-grey-200)}.slide__progress[data-astro-cid-5tozoqgj]::-webkit-progress-value{background-color:var(--clr-black);border-radius:9999px}.slide__progress[data-astro-cid-5tozoqgj]::-moz-progress-bar{background-color:var(--clr-black);border-radius:9999px}.slides[data-astro-cid-5tozoqgj]{max-width:715px;width:100%;margin-inline:auto}.slide__header[data-astro-cid-5tozoqgj]{max-width:848px;width:100%}.slide__figcaption[data-astro-cid-5tozoqgj]{top:16px;left:16px}.slide__view-image[data-astro-cid-5tozoqgj]{background-color:var(--clr-black);color:var(--clr-white)}.slide__paint[data-astro-cid-5tozoqgj]{background-color:var(--clr-white);margin-top:-54px;max-width:282px;width:100%;padding-inline:26px;padding-block:30px}.slide__author-portrait[data-astro-cid-5tozoqgj]{aspect-ratio:1 / 1;width:64px}.slide__year-container[data-astro-cid-5tozoqgj]{text-align:right;line-height:1}.slide__year[data-astro-cid-5tozoqgj]{line-height:inherit!important}.slide__description-container[data-astro-cid-5tozoqgj]{margin-top:-44px}.slide__handler-btn[data-astro-cid-5tozoqgj]:disabled{cursor:not-allowed;pointer-events:none;color:var(--clr-grey-200)}.slide__progress[data-astro-cid-5tozoqgj]{width:100%;height:2px}@media screen and (min-width: 37.5em){.slide__figure[data-astro-cid-5tozoqgj]{max-width:475px}.slide__figcaption[data-astro-cid-5tozoqgj]{top:initial;left:16px;bottom:16px}.slide__meta-data[data-astro-cid-5tozoqgj]{position:absolute;top:0;left:350px}.slide__paint[data-astro-cid-5tozoqgj]{background-color:var(--clr-white);margin-top:0;max-width:445px;padding:0 0 60px 60px}.slide__portrait[data-astro-cid-5tozoqgj]{text-align:right;padding-right:60px}.slide__year-container[data-astro-cid-5tozoqgj]{margin-top:60px}.slide__author-portrait[data-astro-cid-5tozoqgj]{display:inline-block;width:128px}.slide__year-container[data-astro-cid-5tozoqgj]{text-align:left}.slide__description-container[data-astro-cid-5tozoqgj]{padding-left:120px;margin-top:-140px}}@media screen and (min-width: 86em){.slides[data-astro-cid-5tozoqgj]{display:flex;flex-direction:row;gap:20px;max-width:1380px;margin-bottom:80px}.slide__meta-data[data-astro-cid-5tozoqgj]{max-width:450px;width:100%;height:100%;display:flex;flex-direction:column;justify-content:space-between}.slide__portrait[data-astro-cid-5tozoqgj]{text-align:left;padding-left:142px}.slide__author-portrait[data-astro-cid-5tozoqgj]{transform:translateY(60%)}.slide__description-container[data-astro-cid-5tozoqgj]{padding-left:0}.slide__year-container[data-astro-cid-5tozoqgj]{margin-top:0}.slide__source[data-astro-cid-5tozoqgj]{margin:0;position:absolute;bottom:0}.slide__description[data-astro-cid-5tozoqgj]{max-width:350px}.slide__wrapper[data-astro-cid-5tozoqgj]{position:relative;display:flex;flex-direction:column;justify-content:space-between}}
+</style></head> <body class=" flex flex-col"> <header class="header min-h-[80px] flex flex-row justify-between items-center" role="banner"> <div class=" w-full mx-auto px-[25px]">  <div class="header__container h-full py-[20px] md:py-[50px] flex flex-row justify-between items-center max-w-[1440px] m-auto border-b border-gray-200"> <a href="/" class="header__logo" aria-label="Go to homepage"> <svg class="logo w-[113px] h-[32px] basis-[32px] lg:w-[170px] lg:h-[48px] lg:basis-[48px] inline-block flex-none" aria-hidden="true"> <use href="/assets/shared/logo.svg#logo-galleria"></use> </svg> </a> <div id="slideshow-announcement" aria-live="polite" class="sr-only"></div> <button id="slideshow-toggle" type="button" aria-pressed="true" aria-label="Stop image slideshow" class="header__start-slideshow text-grey-400 text-preset-6 text-preset-5 focus:outline-black focus:outline-2 focus:outline-solid"> STOP SLIDESHOW </button> </div>  </div> </header> <script type="module">
+  const initializeHeader = () => {
+    const baseEl = document.querySelector("base[href]");
+    const baseHref = baseEl?.href ?? "/";
+
+    const $toggleBtn = document.getElementById("slideshow-toggle");
+
+    const announcer = document.getElementById("slideshow-announcement");
+
+    $toggleBtn.addEventListener("click", () => {
+      console.log("toggleBtn");
+
+      const isPressed = $toggleBtn.getAttribute("aria-pressed") === "true";
+      const newState = !isPressed;
+
+      $toggleBtn.setAttribute("aria-pressed", String(!isPressed));
+
+      $toggleBtn.textContent = isPressed ? "START SLIDESHOW" : "STOP SLIDESHOW";
+      $toggleBtn.setAttribute(
+        "aria-label",
+        isPressed ? "Start image slideshow" : "Stop image slideshow"
+      );
+
+      announcer.textContent = newState
+        ? "Slideshow started"
+        : "Slideshow stopped";
+
+      window.location.replace(`${baseHref}${isPressed ? "" : "art/0"}`);
+    });
+  };
+
+  initializeHeader();
+
+  document.addEventListener("astro:after-swap", () => {
+    initializeHeader();
+  });
+</script> <main>  <div class="mt-[20px] sm:mt-[40px] lg:mt-[80px] flex flex-col justify-between items-center w-full mx-auto px-[25px]">  <section class="slides relative" role="region" aria-labelledby="slides__main-title" aria-describedby="slide__description" data-astro-cid-5tozoqgj> <h1 id="slides__main-title" class="sr-only" data-astro-cid-5tozoqgj> Paiting titled Guernica by Pablo Picasso </h1> <div class="slide__header" data-astro-cid-5tozoqgj> <figure id="slide__figure" class="slide__figure relative" data-astro-cid-5tozoqgj> <picture id="slide__picture" class="slide__picture" data-astro-cid-5tozoqgj> <source id="slide__picture-source" media="(min-width: 600px)" srcset="/assets/guernica/hero-large.jpg" data-astro-cid-5tozoqgj> <img id="slide__picture-img" class="slide__picture-img" src="/assets/guernica/hero-small.jpg" alt="Paiting titled Guernica by Pablo Picasso" data-astro-cid-5tozoqgj> </picture> <figcaption id="slide__figcaption" class="slide__figcaption absolute" data-astro-cid-5tozoqgj> <a id="slide__view-image" class="slide__view-image text-preset-7 flex flex-row justify-center items-center gap-2 p-3.5" aria-label="View source of painting Guernica by Pablo Picasso" href="/assets/guernica/gallery.jpg" data-width="1253" data-height="712" target="_blank" data-astro-cid-5tozoqgj> <svg class="w-[12px] h-[12px] basis-[12px] text-white" aria-hidden="true" data-astro-cid-5tozoqgj> <use href="/assets/shared/icon-view-image.svg#icon-view" data-astro-cid-5tozoqgj></use> </svg> <span data-astro-cid-5tozoqgj>VIEW SOURCE</span> </a> </figcaption> </figure> <div class="slide__meta-data" data-astro-cid-5tozoqgj> <div id="slide__paint" class="slide__paint relative" data-astro-cid-5tozoqgj> <h2 id="slide__paint-name" class="slide__paint-name text-preset-2 text-black" aria-label="Guernica" data-astro-cid-5tozoqgj> Guernica </h2> <h3 class="slide__paint-artist text-preset-4 text-grey-400" aria-label="Pablo Picasso" data-astro-cid-5tozoqgj> Pablo Picasso </h3> </div> <div class="slide__portrait" data-astro-cid-5tozoqgj> <img id="slide__author-portrait" class="slide__author-portrait" src="/assets/guernica/artist.jpg" alt="Portrait of Pablo Picasso" aria-hidden="true" data-astro-cid-5tozoqgj> </div> </div> </div> <div class="slide__data relative" data-astro-cid-5tozoqgj> <div class="slide__year-container" data-astro-cid-5tozoqgj> <h3 id="slide__year" class="slide__year text-preset-1 text-grey-100 bold" data-astro-cid-5tozoqgj> 1937 </h3> </div> <div class="slide__description-container" data-astro-cid-5tozoqgj> <p id="slide__description" class="slide__description text-preset-3-mobile text-grey-400" data-astro-cid-5tozoqgj> The scene occurs within a room where, on the left, a wide-eyed bull stands over a grieving woman holding a dead child in her arms. In the center of the room a horse falls in agony with a large gaping hole in its side, as if it had just been run through by a spear or javelin. The horse appears to be wearing chain mail armor, decorated with vertical tally marks arranged in rows. A dead and dismembered soldier lies under the horse. The hand of his severed right arm grasps a shattered sword, from which a flower grows. </p> <p class="slide__source my-[68px] uppercase" data-astro-cid-5tozoqgj> <a id="slide__source-link" href="https://en.wikipedia.org/wiki/Guernica_(Picasso)" class="slide__source-link text-preset-5-mobile" target="_blank" rel="noopener" aria-label="Visit external source page for Guernica by Pablo Picasso" data-astro-cid-5tozoqgj>
+Go to source
+</a> </p> </div> </div> </section> <section class="slide__footer py-[20px] w-full max-w-[1440px] mx-auto mt-auto" data-astro-cid-5tozoqgj> <div class="slide__progress-container" data-astro-cid-5tozoqgj> <progress class="slide__progress" max="15" value="3" data-astro-cid-5tozoqgj></progress> </div> <div class="flex flex-row justify-between items-center" data-astro-cid-5tozoqgj> <div class="slide__footer-information" data-astro-cid-5tozoqgj> <h3 class="text-preset-3 text-black" data-astro-cid-5tozoqgj>Guernica</h3> <p class="text-preset-5 text-black-75" data-astro-cid-5tozoqgj>Pablo Picasso</p> </div> <div class="slide__footer-handlers flex flex-row justify-center items-center gap-4" data-astro-cid-5tozoqgj> <button id="slide__handler-btn-back" class="slide__handler-btn" aria-label="Previous painting" type="button" data-direction="back" data-astro-cid-5tozoqgj> <svg class="slide__handler-back w-[26px] h-[24px]" aria-hidden="true" data-astro-cid-5tozoqgj> <use href="/assets/shared/icon-back-button.svg#icon-back" data-astro-cid-5tozoqgj></use> </svg> </button> <button id="slide__handler-btn-next" class="slide__handler-btn" aria-label="Next painting" type="button" data-direction="next" data-astro-cid-5tozoqgj> <svg class="slide__handler-next w-[26px] h-[24px]" aria-hidden="true" data-astro-cid-5tozoqgj> <use href="/assets/shared/icon-next-button.svg#icon-next" data-astro-cid-5tozoqgj></use> </svg> </button> </div> </div> </section> <script>(function(){const progressMax = 15;
+const progressIdx = 3;
+const idx = 2;
+
+  const initializeSlide = ({ idx, count }) => {
+    const baseEl = document.querySelector("base[href]");
+    const baseHref = baseEl?.href ?? "/";
+
+    const $btnBack = document.getElementById("slide__handler-btn-back");
+    const $btnNext = document.getElementById("slide__handler-btn-next");
+    const $viewSource = document.getElementById("slide__view-image");
+
+    $viewSource.addEventListener("click", (evt) => {
+      evt.preventDefault();
+      const href = $viewSource.getAttribute("href");
+      const width = $viewSource.getAttribute("data-width");
+      const height = $viewSource.getAttribute("data-height");
+      const $dialog = document.getElementById("modal-dialog");
+      const $dialogContainer = document.getElementById(
+        "modal-dialog-container"
+      );
+
+      const html = `
+          <img class="gallery__image" src="${href}" style='margin: auto;aspect-ratio: ${width} / ${height}' />
+        `;
+
+      $dialogContainer.innerHTML = html;
+
+      $dialog.showModal();
+
+      $dialog.addEventListener("click", (evt) => {
+        evt.preventDefault();
+
+        $dialog.close();
+      });
+    });
+
+    if (idx <= 0) {
+      $btnBack.setAttribute("disabled", true);
+    }
+
+    if (idx >= count - 1) {
+      $btnNext.setAttribute("disabled", true);
+    }
+
+    [$btnBack, $btnNext].forEach(($btn) => {
+      $btn.addEventListener("click", (ev) => {
+        const direction = $btn.getAttribute("data-direction");
+
+        console.log({ direction });
+
+        switch (direction) {
+          case "back":
+            window.location.replace(`${baseHref}art/${idx - 1}`);
+
+            break;
+          case "next":
+            window.location.replace(`${baseHref}art/${idx + 1}`);
+
+            break;
+        }
+      });
+    });
+  };
+
+  initializeSlide({ count: progressMax, idx });
+
+  document.addEventListener("astro:after-swap", () => {
+    initializeSlide({ count: progressMax, idx });
+  });
+})();</script>   </div>  </main>  <dialog id="modal-dialog" class="modal-dialog"> <form method="dialog" class="text-right mb-2"> <button class="modal-dialog-button text-preset-3-mobile uppercase" type="submit">Close</button> </form> <div id="modal-dialog-container" class="modal-dialog-container"></div> </dialog> <script type="module" src="/_astro/BaseLayout.astro_astro_type_script_index_1_lang.CBxl0pOq.js"></script></body></html>
