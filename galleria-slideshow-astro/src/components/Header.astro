@@ -2,54 +2,61 @@
 import Container from "./Container.astro";
 
 interface Props {
-  urlActive?: string;
   isStartSlideShow?: boolean;
 }
 
-const { urlActive = "", isStartSlideShow = true } = Astro.props;
+const { isStartSlideShow = true } = Astro.props;
 ---
 
 <header
-  class="header h-[80px] flex flex-row justify-between items-center"
+  class="header min-h-[80px] flex flex-row justify-between items-center"
   role="banner"
 >
-  <Container
-    className="flex flex-row justify-between items-center h-full border-b border-gray-200"
-  >
-    <a href="/" class="header__logo" aria-label="Go to homepage">
-      <svg
-        class="logo w-[113px] h-[32px] basis-[32px] lg:w-[170px] lg:h-[48px] lg:basis-[48px] inline-block flex-none"
-        aria-hidden="true"
-      >
-        <use href="/assets/shared/logo.svg#logo-galleria"></use>
-      </svg>
-    </a>
-    <div id="slideshow-announcement" aria-live="polite" class="sr-only"></div>
-    <button
-      id="slideshow-toggle"
-      type="button"
-      aria-pressed={`${isStartSlideShow ? "false" : "true"}`}
-      aria-label={`${isStartSlideShow ? "Start image slideshow" : "Stop image slideshow"}`}
-      class="header__start-slideshow text-grey-400 text-preset-6 text-preset-5 focus:outline-black focus:outline-2 focus:outline-solid"
+  <Container className="">
+    <div
+      class="header__container h-full py-[20px] md:py-[50px] flex flex-row justify-between items-center max-w-[1440px] m-auto border-b border-gray-200"
     >
-      {isStartSlideShow ? "START SLIDESHOW" : "STOP SLIDESHOW"}
-    </button>
+      <a href="/" class="header__logo" aria-label="Go to homepage">
+        <svg
+          class="logo w-[113px] h-[32px] basis-[32px] lg:w-[170px] lg:h-[48px] lg:basis-[48px] inline-block flex-none"
+          aria-hidden="true"
+        >
+          <use href="/assets/shared/logo.svg#logo-galleria"></use>
+        </svg>
+      </a>
+      <div id="slideshow-announcement" aria-live="polite" class="sr-only"></div>
+      <button
+        id="slideshow-toggle"
+        type="button"
+        aria-pressed={`${isStartSlideShow ? "false" : "true"}`}
+        aria-label={`${isStartSlideShow ? "Start image slideshow" : "Stop image slideshow"}`}
+        class="header__start-slideshow text-grey-400 text-preset-6 text-preset-5 focus:outline-black focus:outline-2 focus:outline-solid"
+      >
+        {isStartSlideShow ? "START SLIDESHOW" : "STOP SLIDESHOW"}
+      </button>
+    </div>
   </Container>
 </header>
 
 <script type="module">
-  const toggleBtn = document.getElementById("slideshow-toggle");
-  const announcer = document.getElementById("slideshow-announcement");
+  const initializeHeader = () => {
+    const baseEl = document.querySelector("base[href]");
+    const baseHref = baseEl?.href ?? "/";
 
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
-      const isPressed = toggleBtn.getAttribute("aria-pressed") === "true";
+    const $toggleBtn = document.getElementById("slideshow-toggle");
+
+    const announcer = document.getElementById("slideshow-announcement");
+
+    $toggleBtn.addEventListener("click", () => {
+      console.log("toggleBtn");
+
+      const isPressed = $toggleBtn.getAttribute("aria-pressed") === "true";
       const newState = !isPressed;
 
-      toggleBtn.setAttribute("aria-pressed", String(!isPressed));
+      $toggleBtn.setAttribute("aria-pressed", String(!isPressed));
 
-      toggleBtn.textContent = isPressed ? "START SLIDESHOW" : "STOP SLIDESHOW";
-      toggleBtn.setAttribute(
+      $toggleBtn.textContent = isPressed ? "START SLIDESHOW" : "STOP SLIDESHOW";
+      $toggleBtn.setAttribute(
         "aria-label",
         isPressed ? "Start image slideshow" : "Stop image slideshow"
       );
@@ -57,6 +64,14 @@ const { urlActive = "", isStartSlideShow = true } = Astro.props;
       announcer.textContent = newState
         ? "Slideshow started"
         : "Slideshow stopped";
+
+      window.location.replace(`${baseHref}${isPressed ? "" : "art/0"}`);
     });
-  }
+  };
+
+  initializeHeader();
+
+  document.addEventListener("astro:after-swap", () => {
+    initializeHeader();
+  });
 </script>

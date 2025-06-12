@@ -117,7 +117,7 @@ const progressIdx = idx + 1;
   </div>
 </section>
 
-<section class="slide__footer py-[20px]">
+<section class="slide__footer py-[20px] w-full max-w-[1440px] mx-auto mt-auto">
   <div class="slide__progress-container">
     <progress class="slide__progress" max={progressMax} value={progressIdx}
     ></progress>
@@ -155,270 +155,274 @@ const progressIdx = idx + 1;
       </button>
     </div>
   </div>
+</section>
 
-  <script define:vars={{ progressMax, progressIdx, idx }}>
-    const initializeSlide = ({ idx, count }) => {
-      const baseEl = document.querySelector("base[href]");
-      const baseHref = baseEl?.href ?? "/";
+<script define:vars={{ progressMax, progressIdx, idx }}>
+  const initializeSlide = ({ idx, count }) => {
+    const baseEl = document.querySelector("base[href]");
+    const baseHref = baseEl?.href ?? "/";
 
-      const $btnBack = document.getElementById("slide__handler-btn-back");
-      const $btnNext = document.getElementById("slide__handler-btn-next");
-      const $toggle = document.getElementById("slideshow-toggle");
-      const $viewSource = document.getElementById("slide__view-image");
+    const $btnBack = document.getElementById("slide__handler-btn-back");
+    const $btnNext = document.getElementById("slide__handler-btn-next");
+    const $viewSource = document.getElementById("slide__view-image");
 
-      $viewSource.addEventListener("click", (evt) => {
-        evt.preventDefault();
-        const href = $viewSource.getAttribute("href");
-        const width = $viewSource.getAttribute("data-width");
-        const height = $viewSource.getAttribute("data-height");
-        const $dialog = document.getElementById("modal-dialog");
+    $viewSource.addEventListener("click", (evt) => {
+      evt.preventDefault();
+      const href = $viewSource.getAttribute("href");
+      const width = $viewSource.getAttribute("data-width");
+      const height = $viewSource.getAttribute("data-height");
+      const $dialog = document.getElementById("modal-dialog");
+      const $dialogContainer = document.getElementById(
+        "modal-dialog-container"
+      );
 
-        const html = `
+      const html = `
           <img class="gallery__image" src="${href}" style='margin: auto;aspect-ratio: ${width} / ${height}' />
         `;
 
-        $dialog.innerHTML = html;
+      $dialogContainer.innerHTML = html;
 
-        $dialog.showModal();
+      $dialog.showModal();
+
+      $dialog.addEventListener("click", (evt) => {
+        evt.preventDefault();
+
+        $dialog.close();
       });
-
-      $toggle.addEventListener("click", () => {
-        window.location.replace(`${baseHref}`);
-      });
-
-      if (idx <= 0) {
-        $btnBack.setAttribute("disabled", true);
-      }
-
-      if (idx >= count - 1) {
-        $btnNext.setAttribute("disabled", true);
-      }
-
-      [$btnBack, $btnNext].forEach(($btn) => {
-        $btn.addEventListener("click", (ev) => {
-          const direction = $btn.getAttribute("data-direction");
-
-          console.log({ direction });
-
-          switch (direction) {
-            case "back":
-              window.location.replace(`${baseHref}art/${idx - 1}`);
-
-              break;
-            case "next":
-              window.location.replace(`${baseHref}art/${idx + 1}`);
-
-              break;
-          }
-        });
-      });
-    };
-
-    initializeSlide({ count: progressMax, idx });
-
-    document.addEventListener("astro:after-swap", () => {
-      initializeSlide({ count: progressMax, idx });
     });
-  </script>
 
-  <style>
-    .gallery__image {
-      height: 100%;
-      width: auto;
+    if (idx <= 0) {
+      $btnBack.setAttribute("disabled", true);
     }
 
-    .slide__progress-container {
-      width: 100%;
-      margin: 1rem auto;
+    if (idx >= count - 1) {
+      $btnNext.setAttribute("disabled", true);
     }
 
-    .slide__progress {
-      width: 100%;
-      height: 8px;
-      appearance: none;
-      -webkit-appearance: none;
-      background-color: var(--clr-grey-200);
-      border: none;
-      border-radius: 9999px;
-      overflow: hidden;
-    }
+    [$btnBack, $btnNext].forEach(($btn) => {
+      $btn.addEventListener("click", (ev) => {
+        const direction = $btn.getAttribute("data-direction");
 
-    /* Chrome & Safari: progress bar styling */
-    .slide__progress::-webkit-progress-bar {
-      background-color: var(--clr-grey-200);
-    }
+        console.log({ direction });
 
-    .slide__progress::-webkit-progress-value {
-      background-color: var(--clr-black);
-      border-radius: 9999px;
-    }
+        switch (direction) {
+          case "back":
+            window.location.replace(`${baseHref}art/${idx - 1}`);
 
-    /* Firefox */
-    .slide__progress::-moz-progress-bar {
-      background-color: var(--clr-black);
-      border-radius: 9999px;
-    }
+            break;
+          case "next":
+            window.location.replace(`${baseHref}art/${idx + 1}`);
 
-    .slides {
-      /* max-width: 1360px; */
-      max-width: 715px;
-      width: 100%;
-      margin-inline: auto;
-    }
+            break;
+        }
+      });
+    });
+  };
 
-    .slide__header {
-      max-width: 848px;
-      width: 100%;
+  initializeSlide({ count: progressMax, idx });
+
+  document.addEventListener("astro:after-swap", () => {
+    initializeSlide({ count: progressMax, idx });
+  });
+</script>
+
+<style>
+  .gallery__image {
+    height: 100%;
+    width: auto;
+  }
+
+  .slide__progress-container {
+    width: 100%;
+    margin: 1rem auto;
+  }
+
+  .slide__progress {
+    width: 100%;
+    height: 8px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--clr-grey-200);
+    border: none;
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+
+  /* Chrome & Safari: progress bar styling */
+  .slide__progress::-webkit-progress-bar {
+    background-color: var(--clr-grey-200);
+  }
+
+  .slide__progress::-webkit-progress-value {
+    background-color: var(--clr-black);
+    border-radius: 9999px;
+  }
+
+  /* Firefox */
+  .slide__progress::-moz-progress-bar {
+    background-color: var(--clr-black);
+    border-radius: 9999px;
+  }
+
+  .slides {
+    /* max-width: 1360px; */
+    max-width: 715px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .slide__header {
+    max-width: 848px;
+    width: 100%;
+  }
+
+  .slide__figcaption {
+    top: 16px;
+    left: 16px;
+  }
+
+  .slide__view-image {
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+  }
+
+  .slide__paint {
+    background-color: var(--clr-white);
+    margin-top: -54px;
+    max-width: 282px;
+    width: 100%;
+    padding-inline: 26px;
+    padding-block: 30px;
+  }
+
+  .slide__author-portrait {
+    aspect-ratio: 1 / 1;
+    width: 64px;
+  }
+
+  .slide__year-container {
+    text-align: right;
+    line-height: 1;
+  }
+
+  .slide__year {
+    line-height: inherit !important;
+  }
+
+  .slide__description-container {
+    margin-top: -44px;
+  }
+
+  .slide__handler-btn:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    color: var(--clr-grey-200);
+  }
+
+  .slide__progress {
+    width: 100%;
+    height: 2px;
+  }
+
+  @media screen and (min-width: 37.5em) {
+    .slide__figure {
+      max-width: 475px;
     }
 
     .slide__figcaption {
-      top: 16px;
+      top: initial;
       left: 16px;
+      bottom: 16px;
     }
 
-    .slide__view-image {
-      background-color: var(--clr-black);
-      color: var(--clr-white);
+    .slide__meta-data {
+      position: absolute;
+      top: 0;
+      left: 350px;
     }
 
     .slide__paint {
       background-color: var(--clr-white);
-      margin-top: -54px;
-      max-width: 282px;
-      width: 100%;
-      padding-inline: 26px;
-      padding-block: 30px;
+      margin-top: 0;
+      max-width: 445px;
+      padding: 0 0 60px 60px;
     }
 
-    .slide__author-portrait {
-      aspect-ratio: 1 / 1;
-      width: 64px;
+    .slide__portrait {
+      text-align: right;
+      padding-right: 60px;
     }
 
     .slide__year-container {
-      text-align: right;
-      line-height: 1;
+      margin-top: 60px;
     }
 
-    .slide__year {
-      line-height: inherit !important;
+    .slide__author-portrait {
+      display: inline-block;
+      width: 128px;
+    }
+
+    .slide__year-container {
+      text-align: left;
     }
 
     .slide__description-container {
-      margin-top: -44px;
+      padding-left: 120px;
+      margin-top: -140px;
+    }
+  }
+
+  @media screen and (min-width: 86em) {
+    .slides {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      max-width: 1380px;
+      margin-bottom: 80px;
     }
 
-    .slide__handler-btn:disabled {
-      cursor: not-allowed;
-      pointer-events: none;
-      color: var(--clr-grey-200);
-    }
-
-    .slide__progress {
+    .slide__meta-data {
+      max-width: 450px;
       width: 100%;
-      height: 2px;
+      /* background-color: red; */
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    @media screen and (min-width: 37.5em) {
-      .slide__figure {
-        max-width: 475px;
-      }
-
-      .slide__figcaption {
-        top: initial;
-        left: 16px;
-        bottom: 16px;
-      }
-
-      .slide__meta-data {
-        position: absolute;
-        top: 0;
-        left: 350px;
-      }
-
-      .slide__paint {
-        background-color: var(--clr-white);
-        margin-top: 0;
-        max-width: 445px;
-        padding: 0 0 60px 60px;
-      }
-
-      .slide__portrait {
-        text-align: right;
-        padding-right: 60px;
-      }
-
-      .slide__year-container {
-        margin-top: 60px;
-      }
-
-      .slide__author-portrait {
-        display: inline-block;
-        width: 128px;
-      }
-
-      .slide__year-container {
-        text-align: left;
-      }
-
-      .slide__description-container {
-        padding-left: 120px;
-        margin-top: -140px;
-      }
+    .slide__portrait {
+      text-align: left;
+      padding-left: 142px;
     }
 
-    @media screen and (min-width: 86em) {
-      .slides {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        max-width: 1380px;
-        margin-bottom: 80px;
-      }
-
-      .slide__meta-data {
-        max-width: 450px;
-        width: 100%;
-        /* background-color: red; */
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-
-      .slide__portrait {
-        text-align: left;
-        padding-left: 142px;
-      }
-
-      .slide__author-portrait {
-        transform: translateY(60%);
-      }
-
-      .slide__description-container {
-        padding-left: 0;
-      }
-
-      .slide__year-container {
-        margin-top: 0;
-      }
-
-      .slide__source {
-        margin: 0;
-        position: absolute;
-        bottom: 0;
-      }
-
-      .slide__description {
-        max-width: 350px;
-      }
-
-      .slide__wrapper {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
+    .slide__author-portrait {
+      transform: translateY(60%);
     }
-  </style>
-</section>
+
+    .slide__description-container {
+      padding-left: 0;
+    }
+
+    .slide__year-container {
+      margin-top: 0;
+    }
+
+    .slide__source {
+      margin: 0;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .slide__description {
+      max-width: 350px;
+    }
+
+    .slide__wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+</style>

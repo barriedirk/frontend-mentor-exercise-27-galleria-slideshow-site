@@ -29,7 +29,6 @@ className += " flex flex-col";
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
 
@@ -37,7 +36,7 @@ className += " flex flex-col";
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./assets/favicon-32x32.png"
+      href="/assets/favicon-32x32.png"
     />
 
     <meta name="author" content="Barrie Freyre" />
@@ -86,7 +85,15 @@ className += " flex flex-col";
     </main>
     {showFooter && <Footer />}
 
-    <dialog id="modal-dialog" class="modal-dialog"></dialog>
+    <dialog id="modal-dialog" class="modal-dialog">
+      <form method="dialog" class="text-right mb-2">
+        <button
+          class="modal-dialog-button text-preset-3-mobile uppercase"
+          type="submit">Close</button
+        >
+      </form>
+      <div id="modal-dialog-container" class="modal-dialog-container"></div>
+    </dialog>
   </body>
 </html>
 
@@ -95,30 +102,13 @@ className += " flex flex-col";
     window.addEventListener("load", () => {
       document.body.classList.add("fade-in");
     });
-
-    const $dialog = document.querySelector(
-      "#modal-dialog"
-    ) as HTMLDialogElement;
-
-    if (!!$dialog) {
-      // if (!$dialog?.showModal) {
-      //@todo, review
-      // dialogPolyfill.registerDialog($dialog);
-      // }
-
-      $dialog.addEventListener("click", (event) => {
-        if (event.target === $dialog) {
-          $dialog.close();
-        }
-      });
-    }
-
-    document.addEventListener("astro:after-swap", () => {
-      setTimeout(() => {
-        document.querySelector("body")!.classList.add("fade-in");
-      }, 300);
-    });
   };
 
   initializePage();
+
+  document.addEventListener("astro:after-swap", () => {
+    setTimeout(() => {
+      document.querySelector("body")!.classList.add("fade-in");
+    }, 300);
+  });
 </script>

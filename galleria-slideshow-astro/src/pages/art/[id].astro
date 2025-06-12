@@ -18,7 +18,9 @@ const art = data[Number(id)];
 ---
 
 <BaseLayout title={`${art.name}`} showFooter={false} isStartSlideShow={false}>
-  <Container className="mt-[20px] sm:mt-[40px]">
+  <Container
+    className="mt-[20px] sm:mt-[40px] lg:mt-[80px] flex flex-col justify-between items-center"
+  >
     <Slide idx={Number(id)} />
   </Container>
 </BaseLayout>

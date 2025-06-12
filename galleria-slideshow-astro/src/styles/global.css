@@ -21,7 +21,7 @@ body.fade-in {
 
 dialog.modal-dialog {
   color: var(--clr-grey-200);
-  background-color: var(--clr-black-50);
+  background-color: transparent;
   border: none;
   padding: 1rem;
   border-radius: 8px;
@@ -30,7 +30,7 @@ dialog.modal-dialog {
   position: fixed;
   z-index: 9999;
 
-  width: 100%;
+  width: fit-content;
   max-width: 620px;
   max-height: 750px;
   margin: auto;
@@ -48,5 +48,5 @@ dialog.modal-dialog {
 }
 
 dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.853);
 }
