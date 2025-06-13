@@ -3,6 +3,11 @@ import BaseLayout from "../layout/BaseLayout.astro";
 import Container from "../components/Container.astro";
 
 import data from "../data/data-with-sizes.json";
+
+const isDev = process.env.NODE_ENV === "development";
+const base = isDev
+  ? "/"
+  : "/frontend-mentor-exercise-27-galleria-slideshow-site/";
 ---
 
 <BaseLayout title="Galleria">
@@ -19,7 +24,7 @@ import data from "../data/data-with-sizes.json";
 
             return (
               <a
-                href={`./art/${idx}`}
+                href={`${base}art/${idx}`}
                 class={`gallery__item-link gallery__item-${idx}`}
                 style={styleItem}
               >

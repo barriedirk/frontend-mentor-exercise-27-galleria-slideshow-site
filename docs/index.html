@@ -9,7 +9,7 @@
 
     <meta name="author" content="Barrie Freyre">
 
-    <base href="https://barriedirk.github.io/frontend-mentor-exercise-27-galleria-slideshow-site/">
+    <base href="/frontend-mentor-exercise-27-galleria-slideshow-site/">
 
     <meta name="linkedin" content="https://www.linkedin.com/in/barriefreyre/">
     <meta name="github" content="https://github.com/barriedirk">
@@ -55,9 +55,9 @@
   <div class=" w-full mx-auto px-[25px]">
   
     <div class="header__container h-full py-[20px] md:py-[50px] flex flex-row justify-between items-center max-w-[1440px] m-auto border-b border-gray-200">
-      <a href="./" class="header__logo" aria-label="Go to homepage">
+      <a href="/frontend-mentor-exercise-27-galleria-slideshow-site/" class="header__logo" aria-label="Go to homepage">
         <svg class="logo w-[113px] h-[32px] basis-[32px] lg:w-[170px] lg:h-[48px] lg:basis-[48px] inline-block flex-none" aria-hidden="true">
-          <use href="./assets/shared/logo.svg#logo-galleria"></use>
+          <use href="/frontend-mentor-exercise-27-galleria-slideshow-site/assets/shared/logo.svg#logo-galleria"></use>
         </svg>
       </a>
       <div id="slideshow-announcement" aria-live="polite" class="sr-only"></div>
@@ -96,7 +96,7 @@
         ? "Slideshow started"
         : "Slideshow stopped";
 
-      window.location.replace(`${baseHref}${isPressed ? "" : "./art/0"}`);
+      window.location.replace(`${isPressed ? baseHref : baseHref + "art/0"}`);
     });
   };
 
@@ -112,10 +112,10 @@
   
     <section class="gallery" data-astro-cid-j7pv25f6>
       <div class="gallery-masonry" data-astro-cid-j7pv25f6>
-        <a href="./art/0" class="gallery__item-link gallery__item-0" style="--grid-area: ga-0;--grid-span-md: span 29;--grid-span-xl: span 5;" data-astro-cid-j7pv25f6>
+        <a href="/frontend-mentor-exercise-27-galleria-slideshow-site/art/0" class="gallery__item-link gallery__item-0" style="--grid-area: ga-0;--grid-span-md: span 29;--grid-span-xl: span 5;" data-astro-cid-j7pv25f6>
                 <figure id="galleryItem0" class="gallery__item relative" aria-labelledby="caption-0" data-item-idx="0" role="group" data-astro-cid-j7pv25f6>
                   <picture class="gallery__picture relative" data-astro-cid-j7pv25f6>
-                    <img style="--thumbnail-width:327; --thumbnail-height:250;--grid-area:area-0;" class="gallery__item--image lazy-image" src="./assets/starry-night/thumbnail.jpg" alt="Painting titled &#34;Starry Night&#34; by Vincent Van Gogh" loading="lazy" data-astro-cid-j7pv25f6>
+                    <img style="--thumbnail-width:327; --thumbnail-height:250;--grid-area:area-0;" class="gallery__item--image lazy-image" src="assets/starry-night/thumbnail.jpg" alt="Painting titled &#34;Starry Night&#34; by Vincent Van Gogh" loading="lazy" data-astro-cid-j7pv25f6>
                   </picture>
 
                   <figcaption id="caption-0" class="gallery__item--caption flex flex-col gap-2 justify-center items-start" data-astro-cid-j7pv25f6>
@@ -127,10 +127,10 @@
                     </span>
                   </figcaption>
                 </figure>
-              </a><a href="./art/1" class="gallery__item-link gallery__item-1" style="--grid-area: ga-1;--grid-span-md: span 44;--grid-span-xl: span 7;" data-astro-cid-j7pv25f6>
+              </a><a href="/frontend-mentor-exercise-27-galleria-slideshow-site/art/1" class="gallery__item-link gallery__item-1" style="--grid-area: ga-1;--grid-span-md: span 44;--grid-span-xl: span 7;" data-astro-cid-j7pv25f6>
                 <figure id="galleryItem1" class="gallery__item relative" aria-labelledby="caption-1" data-item-idx="1" role="group" data-astro-cid-j7pv25f6>
                   <picture class="gallery__picture relative" data-astro-cid-j7pv25f6>
-                    <img style="--thumbnail-width:327; --thumbnail-height:400;--grid-area:area-1;" class="gallery__item--image lazy-image" src="./assets/girl-with-pearl-earring/thumbnail.jpg" alt="Painting titled &#34;Girl with a Pearl Earring&#34; by Johannes Vermeer" loading="lazy" data-astro-cid-j7pv25f6>
+                    <img style="--thumbnail-width:327; --thumbnail-height:400;--grid-area:area-1;" class="gallery__item--image lazy-image" src="assets/girl-with-pearl-earring/thumbnail.jpg" alt="Painting titled &#34;Girl with a Pearl Earring&#34; by Johannes Vermeer" loading="lazy" data-astro-cid-j7pv25f6>
                   </picture>
 
                   <figcaption id="caption-1" class="gallery__item--caption flex flex-col gap-2 justify-center items-start" data-astro-cid-j7pv25f6>
@@ -142,10 +142,10 @@
                     </span>
                   </figcaption>
                 </figure>
-              </a><a href="./art/2" class="gallery__item-link gallery__item-2" style="--grid-area: ga-2;--grid-span-md: span 32;--grid-span-xl: span 5;" data-astro-cid-j7pv25f6>
+              </a><a href="/frontend-mentor-exercise-27-galleria-slideshow-site/art/2" class="gallery__item-link gallery__item-2" style="--grid-area: ga-2;--grid-span-md: span 32;--grid-span-xl: span 5;" data-astro-cid-j7pv25f6>
                 <figure id="galleryItem2" class="gallery__item relative" aria-labelledby="caption-2" data-item-idx="2" role="group" data-astro-cid-j7pv25f6>
                   <picture class="gallery__picture relative" data-astro-cid-j7pv25f6>
-                    <img style="--thumbnail-width:327; --thumbnail-height:285;--grid-area:area-2;" class="gallery__item--image lazy-image" src="./assets/guernica/thumbnail.jpg" alt="Painting titled &#34;Guernica&#34; by Pablo Picasso" loading="lazy" data-astro-cid-j7pv25f6>
+                    <img style="--thumbnail-width:327; --thumbnail-height:285;--grid-area:area-2;" class="gallery__item--image lazy-image" src="assets/guernica/thumbnail.jpg" alt="Painting titled &#34;Guernica&#34; by Pablo Picasso" loading="lazy" data-astro-cid-j7pv25f6>
                   </picture>
 
                   <figcaption id="caption-2" class="gallery__item--caption flex flex-col gap-2 justify-center items-start" data-astro-cid-j7pv25f6>
@@ -157,10 +157,10 @@
                     </span>
                   </figcaption>
                 </figure>
-              </a><a href="./art/3" class="gallery__item-link gallery__item-3" style="--grid-area: ga-3;--grid-span-md: span 29;--grid-span-xl: span 5;" data-astro-cid-j7pv25f6>
+              </a><a href="/frontend-mentor-exercise-27-galleria-slideshow-site/art/3" class="gallery__item-link gallery__item-3" style="--grid-area: ga-3;--grid-span-md: span 29;--grid-span-xl: span 5;" data-astro-cid-j7pv25f6>
                 <figure id="galleryItem3" class="gallery__item relative" aria-labelledby="caption-3" data-item-idx="3" role="group" data-astro-cid-j7pv25f6>
                   <picture class="gallery__picture relative" data-astro-cid-j7pv25f6>
-                    <img style="--thumbnail-width:327; --thumbnail-height:250;--grid-area:area-3;" class="gallery__item--image lazy-image" src="./assets/penitent-magdalene/thumbnail.jpg" alt="Painting titled &#34;Penitent Magdalene&#34; by Artemisia Gentileschi" loading="lazy" data-astro-cid-j7pv25f6>
+                    <img style="--thumbnail-width:327; --thumbnail-height:250;--grid-area:area-3;" class="gallery__item--image lazy-image" src="assets/penitent-magdalene/thumbnail.jpg" alt="Painting titled &#34;Penitent Magdalene&#34; by Artemisia Gentileschi" loading="lazy" data-astro-cid-j7pv25f6>
                   </picture>
 
                   <figcaption id="caption-3" class="gallery__item--caption flex flex-col gap-2 justify-center items-start" data-astro-cid-j7pv25f6>
@@ -172,10 +172,10 @@
                     </span>
                   </figcaption>
                 </figure>
-              </a><a href="./art/4" class="gallery__item-link gallery__item-4" style="--grid-area: ga-4;--grid-span-md: span 38;--grid-span-xl: span 6;" data-astro-cid-j7pv25f6>
+              </a><a href="/frontend-mentor-exercise-27-galleria-slideshow-site/art/4" class="gallery__item-link gallery__item-4" style="--grid-area: ga-4;--grid-span-md: span 38;--grid-span-xl: span 6;" data-astro-cid-j7pv25f6>
                 <figure id="galleryItem4" class="gallery__item relative" aria-labelledby="caption-4" data-item-idx="4" role="group" data-astro-cid-j7pv25f6>
                   <picture class="gallery__picture relative" data-astro-cid-j7pv25f6>
-                    <img style="--thumbnail-width:327; --thumbnail-height:340;--grid-area:area-4;" class="gallery__item--image lazy-image" src="./assets/the-storm-on-the-sea-of-galilee/thumbnail.jpg" alt="Painting titled &#34;The Storm on the Sea of Galilee&#34; by Rembrandt" loading="lazy" data-astro-cid-j7pv25f6>
+                    <img style="--thumbnail-width:327; --thumbnail-height:340;--grid-area:area-4;" class="gallery__item--image lazy-image" src="assets/the-storm-on-the-sea-of-galilee/thumbnail.jpg" alt="Painting titled &#34;The Storm on the Sea of Galilee&#34; by Rembrandt" loading="lazy" data-astro-cid-j7pv25f6>
                   </picture>
 
                   <figcaption id="caption-4" class="gallery__item--caption flex flex-col gap-2 justify-center items-start" data-astro-cid-j7pv25f6>
@@ -187,10 +187,10 @@
                     </span>
                   </figcaption>
                 </figure>
-              </a><a href="./art/5" class="gallery__item-link gallery__item-5" style="--grid-area: ga-5;--grid-span-md: span 32;--grid-span-xl: span 5;" data-astro-cid-j7pv25f6>
+              </a><a href="/frontend-mentor-exercise-27-galleria-slideshow-site/art/5" class="gallery__item-link gallery__item-5" style="--grid-area: ga-5;--grid-span-md: span 32;--grid-span-xl: span 5;" data-astro-cid-j7pv25f6>
                 <figure id="galleryItem5" class="gallery__item relative" aria-labelledby="caption-5" data-item-idx="5" role="group" data-astro-cid-j7pv25f6>
                   <picture class="gallery__picture relative" data-astro-cid-j7pv25f6>
-                    <img style="--thumbnail-width:327; --thumbnail-height:280;--grid-area:area-5;" class="gallery__item--image lazy-image" src="./assets/the-great-wave-off-kanagawa/thumbnail.jpg" alt="Painting titled &#34;The Great Wave off Kanagawa&#34; by Hokusai" loading="lazy" data-astro-cid-j7pv25f6>
+                    <img style="--thumbnail-width:327; --thumbnail-height:280;--grid-area:area-5;" class="gallery__item--image lazy-image" src="assets/the-great-wave-off-kanagawa/thumbnail.jpg" alt="Painting titled &#34;The Great Wave off Kanagawa&#34; by Hokusai" loading="lazy" data-astro-cid-j7pv25f6>
                   </picture>
 
                   <figcaption id="caption-5" class="gallery__item--caption flex flex-col gap-2 justify-center items-start" data-astro-cid-j7pv25f6>
@@ -202,10 +202,10 @@
                     </span>
                   </figcaption>
                 </figure>
-              </a><a href="./art/6" class="gallery__item-link gallery__item-6" style="--grid-area: ga-6;--grid-span-md: span 54;--grid-span-xl: span 9;" data-astro-cid-j7pv25f6>
+              </a><a href="/frontend-mentor-exercise-27-galleria-slideshow-site/art/6" class="gallery__item-link gallery__item-6" style="--grid-area: ga-6;--grid-span-md: span 54;--grid-span-xl: span 9;" data-astro-cid-j7pv25f6>
                 <figure id="galleryItem6" class="gallery__item relative" aria-labelledby="caption-6" data-item-idx="6" role="group" data-astro-cid-j7pv25f6>
                   <picture class="gallery__picture relative" data-astro-cid-j7pv25f6>
-                    <img style="--thumbnail-width:327; --thumbnail-height:500;--grid-area:area-6;" class="gallery__item--image lazy-image" src="./assets/van-gogh-self-portrait/thumbnail.jpg" alt="Painting titled &#34;Van Gogh Self-portrait&#34; by Vincent Van Gogh" loading="lazy" data-astro-cid-j7pv25f6>
+                    <img style="--thumbnail-width:327; --thumbnail-height:500;--grid-area:area-6;" class="gallery__item--image lazy-image" src="assets/van-gogh-self-portrait/thumbnail.jpg" alt="Painting titled &#34;Van Gogh Self-portrait&#34; by Vincent Van Gogh" loading="lazy" data-astro-cid-j7pv25f6>
                   </picture>
 
                   <figcaption id="caption-6" class="gallery__item--caption flex flex-col gap-2 justify-center items-start" data-astro-cid-j7pv25f6>
@@ -217,10 +217,10 @@
                     </span>
                   </figcaption>
                 </figure>
-              </a><a href="./art/7" class="gallery__item-link gallery__item-7" style="--grid-area: ga-7;--grid-span-md: span 29;--grid-span-xl: span 5;" data-astro-cid-j7pv25f6>
+              </a><a href="/frontend-mentor-exercise-27-galleria-slideshow-site/art/7" class="gallery__item-link gallery__item-7" style="--grid-area: ga-7;--grid-span-md: span 29;--grid-span-xl: span 5;" data-astro-cid-j7pv25f6>
                 <figure id="galleryItem7" class="gallery__item relative" aria-labelledby="caption-7" data-item-idx="7" role="group" data-astro-cid-j7pv25f6>
                   <picture class="gallery__picture relative" data-astro-cid-j7pv25f6>
-                    <img style="--thumbnail-width:327; --thumbnail-height:250;--grid-area:area-7;" class="gallery__item--image lazy-image" src="./assets/the-sleeping-gypsy/thumbnail.jpg" alt="Painting titled &#34;The Sleeping Gypsy&#34; by Henri Rousseau" loading="lazy" data-astro-cid-j7pv25f6>
+                    <img style="--thumbnail-width:327; --thumbnail-height:250;--grid-area:area-7;" class="gallery__item--image lazy-image" src="assets/the-sleeping-gypsy/thumbnail.jpg" alt="Painting titled &#34;The Sleeping Gypsy&#34; by Henri Rousseau" loading="lazy" data-astro-cid-j7pv25f6>
                   </picture>
 
                   <figcaption id="caption-7" class="gallery__item--caption flex flex-col gap-2 justify-center items-start" data-astro-cid-j7pv25f6>
@@ -232,10 +232,10 @@
                     </span>
                   </figcaption>
                 </figure>
-              </a><a href="./art/8" class="gallery__item-link gallery__item-8" style="--grid-area: ga-8;--grid-span-md: span 46;--grid-span-xl: span 8;" data-astro-cid-j7pv25f6>
+              </a><a href="/frontend-mentor-exercise-27-galleria-slideshow-site/art/8" class="gallery__item-link gallery__item-8" style="--grid-area: ga-8;--grid-span-md: span 46;--grid-span-xl: span 8;" data-astro-cid-j7pv25f6>
                 <figure id="galleryItem8" class="gallery__item relative" aria-labelledby="caption-8" data-item-idx="8" role="group" data-astro-cid-j7pv25f6>
                   <picture class="gallery__picture relative" data-astro-cid-j7pv25f6>
-                    <img style="--thumbnail-width:327; --thumbnail-height:420;--grid-area:area-8;" class="gallery__item--image lazy-image" src="./assets/lady-with-an-ermine/thumbnail.jpg" alt="Painting titled &#34;Lady with an Ermine&#34; by Leonardo da Vinci" loading="lazy" data-astro-cid-j7pv25f6>
+                    <img style="--thumbnail-width:327; --thumbnail-height:420;--grid-area:area-8;" class="gallery__item--image lazy-image" src="assets/lady-with-an-ermine/thumbnail.jpg" alt="Painting titled &#34;Lady with an Ermine&#34; by Leonardo da Vinci" loading="lazy" data-astro-cid-j7pv25f6>
                   </picture>
 
                   <figcaption id="caption-8" class="gallery__item--caption flex flex-col gap-2 justify-center items-start" data-astro-cid-j7pv25f6>
@@ -247,10 +247,10 @@
                     </span>
                   </figcaption>
                 </figure>
-              </a><a href="./art/9" class="gallery__item-link gallery__item-9" style="--grid-area: ga-9;--grid-span-md: span 30;--grid-span-xl: span 5;" data-astro-cid-j7pv25f6>
+              </a><a href="/frontend-mentor-exercise-27-galleria-slideshow-site/art/9" class="gallery__item-link gallery__item-9" style="--grid-area: ga-9;--grid-span-md: span 30;--grid-span-xl: span 5;" data-astro-cid-j7pv25f6>
                 <figure id="galleryItem9" class="gallery__item relative" aria-labelledby="caption-9" data-item-idx="9" role="group" data-astro-cid-j7pv25f6>
                   <picture class="gallery__picture relative" data-astro-cid-j7pv25f6>
-                    <img style="--thumbnail-width:327; --thumbnail-height:260;--grid-area:area-9;" class="gallery__item--image lazy-image" src="./assets/the-night-cafe/thumbnail.jpg" alt="Painting titled &#34;The Night Café&#34; by Vincent Van Gogh" loading="lazy" data-astro-cid-j7pv25f6>
+                    <img style="--thumbnail-width:327; --thumbnail-height:260;--grid-area:area-9;" class="gallery__item--image lazy-image" src="assets/the-night-cafe/thumbnail.jpg" alt="Painting titled &#34;The Night Café&#34; by Vincent Van Gogh" loading="lazy" data-astro-cid-j7pv25f6>
                   </picture>
 
                   <figcaption id="caption-9" class="gallery__item--caption flex flex-col gap-2 justify-center items-start" data-astro-cid-j7pv25f6>
@@ -262,10 +262,10 @@
                     </span>
                   </figcaption>
                 </figure>
-              </a><a href="./art/10" class="gallery__item-link gallery__item-10" style="--grid-area: ga-10;--grid-span-md: span 47;--grid-span-xl: span 8;" data-astro-cid-j7pv25f6>
+              </a><a href="/frontend-mentor-exercise-27-galleria-slideshow-site/art/10" class="gallery__item-link gallery__item-10" style="--grid-area: ga-10;--grid-span-md: span 47;--grid-span-xl: span 8;" data-astro-cid-j7pv25f6>
                 <figure id="galleryItem10" class="gallery__item relative" aria-labelledby="caption-10" data-item-idx="10" role="group" data-astro-cid-j7pv25f6>
                   <picture class="gallery__picture relative" data-astro-cid-j7pv25f6>
-                    <img style="--thumbnail-width:327; --thumbnail-height:430;--grid-area:area-10;" class="gallery__item--image lazy-image" src="./assets/the-basket-of-apples/thumbnail.jpg" alt="Painting titled &#34;The Basket of Apples&#34; by Paul Cézanne" loading="lazy" data-astro-cid-j7pv25f6>
+                    <img style="--thumbnail-width:327; --thumbnail-height:430;--grid-area:area-10;" class="gallery__item--image lazy-image" src="assets/the-basket-of-apples/thumbnail.jpg" alt="Painting titled &#34;The Basket of Apples&#34; by Paul Cézanne" loading="lazy" data-astro-cid-j7pv25f6>
                   </picture>
 
                   <figcaption id="caption-10" class="gallery__item--caption flex flex-col gap-2 justify-center items-start" data-astro-cid-j7pv25f6>
@@ -277,10 +277,10 @@
                     </span>
                   </figcaption>
                 </figure>
-              </a><a href="./art/11" class="gallery__item-link gallery__item-11" style="--grid-area: ga-11;--grid-span-md: span 30;--grid-span-xl: span 5;" data-astro-cid-j7pv25f6>
+              </a><a href="/frontend-mentor-exercise-27-galleria-slideshow-site/art/11" class="gallery__item-link gallery__item-11" style="--grid-area: ga-11;--grid-span-md: span 30;--grid-span-xl: span 5;" data-astro-cid-j7pv25f6>
                 <figure id="galleryItem11" class="gallery__item relative" aria-labelledby="caption-11" data-item-idx="11" role="group" data-astro-cid-j7pv25f6>
                   <picture class="gallery__picture relative" data-astro-cid-j7pv25f6>
-                    <img style="--thumbnail-width:327; --thumbnail-height:260;--grid-area:area-11;" class="gallery__item--image lazy-image" src="./assets/the-boy-in-the-red-vest/thumbnail.jpg" alt="Painting titled &#34;The Boy in the Red Vest&#34; by Paul Cézanne" loading="lazy" data-astro-cid-j7pv25f6>
+                    <img style="--thumbnail-width:327; --thumbnail-height:260;--grid-area:area-11;" class="gallery__item--image lazy-image" src="assets/the-boy-in-the-red-vest/thumbnail.jpg" alt="Painting titled &#34;The Boy in the Red Vest&#34; by Paul Cézanne" loading="lazy" data-astro-cid-j7pv25f6>
                   </picture>
 
                   <figcaption id="caption-11" class="gallery__item--caption flex flex-col gap-2 justify-center items-start" data-astro-cid-j7pv25f6>
@@ -292,10 +292,10 @@
                     </span>
                   </figcaption>
                 </figure>
-              </a><a href="./art/12" class="gallery__item-link gallery__item-12" style="--grid-area: ga-12;--grid-span-md: span 37;--grid-span-xl: span 6;" data-astro-cid-j7pv25f6>
+              </a><a href="/frontend-mentor-exercise-27-galleria-slideshow-site/art/12" class="gallery__item-link gallery__item-12" style="--grid-area: ga-12;--grid-span-md: span 37;--grid-span-xl: span 6;" data-astro-cid-j7pv25f6>
                 <figure id="galleryItem12" class="gallery__item relative" aria-labelledby="caption-12" data-item-idx="12" role="group" data-astro-cid-j7pv25f6>
                   <picture class="gallery__picture relative" data-astro-cid-j7pv25f6>
-                    <img style="--thumbnail-width:327; --thumbnail-height:330;--grid-area:area-12;" class="gallery__item--image lazy-image" src="./assets/arnolfini-portrait/thumbnail.jpg" alt="Painting titled &#34;Arnolfini Portrait&#34; by Jan van Eyck" loading="lazy" data-astro-cid-j7pv25f6>
+                    <img style="--thumbnail-width:327; --thumbnail-height:330;--grid-area:area-12;" class="gallery__item--image lazy-image" src="assets/arnolfini-portrait/thumbnail.jpg" alt="Painting titled &#34;Arnolfini Portrait&#34; by Jan van Eyck" loading="lazy" data-astro-cid-j7pv25f6>
                   </picture>
 
                   <figcaption id="caption-12" class="gallery__item--caption flex flex-col gap-2 justify-center items-start" data-astro-cid-j7pv25f6>
@@ -307,10 +307,10 @@
                     </span>
                   </figcaption>
                 </figure>
-              </a><a href="./art/13" class="gallery__item-link gallery__item-13" style="--grid-area: ga-13;--grid-span-md: span 56;--grid-span-xl: span 9;" data-astro-cid-j7pv25f6>
+              </a><a href="/frontend-mentor-exercise-27-galleria-slideshow-site/art/13" class="gallery__item-link gallery__item-13" style="--grid-area: ga-13;--grid-span-md: span 56;--grid-span-xl: span 9;" data-astro-cid-j7pv25f6>
                 <figure id="galleryItem13" class="gallery__item relative" aria-labelledby="caption-13" data-item-idx="13" role="group" data-astro-cid-j7pv25f6>
                   <picture class="gallery__picture relative" data-astro-cid-j7pv25f6>
-                    <img style="--thumbnail-width:327; --thumbnail-height:525;--grid-area:area-13;" class="gallery__item--image lazy-image" src="./assets/mona-lisa/thumbnail.jpg" alt="Painting titled &#34;Mona Lisa&#34; by Leonardo da Vinci" loading="lazy" data-astro-cid-j7pv25f6>
+                    <img style="--thumbnail-width:327; --thumbnail-height:525;--grid-area:area-13;" class="gallery__item--image lazy-image" src="assets/mona-lisa/thumbnail.jpg" alt="Painting titled &#34;Mona Lisa&#34; by Leonardo da Vinci" loading="lazy" data-astro-cid-j7pv25f6>
                   </picture>
 
                   <figcaption id="caption-13" class="gallery__item--caption flex flex-col gap-2 justify-center items-start" data-astro-cid-j7pv25f6>
@@ -322,10 +322,10 @@
                     </span>
                   </figcaption>
                 </figure>
-              </a><a href="./art/14" class="gallery__item-link gallery__item-14" style="--grid-area: ga-14;--grid-span-md: span 38;--grid-span-xl: span 6;" data-astro-cid-j7pv25f6>
+              </a><a href="/frontend-mentor-exercise-27-galleria-slideshow-site/art/14" class="gallery__item-link gallery__item-14" style="--grid-area: ga-14;--grid-span-md: span 38;--grid-span-xl: span 6;" data-astro-cid-j7pv25f6>
                 <figure id="galleryItem14" class="gallery__item relative" aria-labelledby="caption-14" data-item-idx="14" role="group" data-astro-cid-j7pv25f6>
                   <picture class="gallery__picture relative" data-astro-cid-j7pv25f6>
-                    <img style="--thumbnail-width:327; --thumbnail-height:340;--grid-area:area-14;" class="gallery__item--image lazy-image" src="./assets/the-swing/thumbnail.jpg" alt="Painting titled &#34;The Swing&#34; by Jean-Honoré Fragonard" loading="lazy" data-astro-cid-j7pv25f6>
+                    <img style="--thumbnail-width:327; --thumbnail-height:340;--grid-area:area-14;" class="gallery__item--image lazy-image" src="assets/the-swing/thumbnail.jpg" alt="Painting titled &#34;The Swing&#34; by Jean-Honoré Fragonard" loading="lazy" data-astro-cid-j7pv25f6>
                   </picture>
 
                   <figcaption id="caption-14" class="gallery__item--caption flex flex-col gap-2 justify-center items-start" data-astro-cid-j7pv25f6>

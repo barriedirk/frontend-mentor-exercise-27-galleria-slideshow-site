@@ -6,7 +6,7 @@
     "source": "https://en.wikipedia.org/wiki/The_Starry_Night",
     "artist": {
       "image": {
-        "src": "./assets/starry-night/artist.jpg",
+        "src": "assets/starry-night/artist.jpg",
         "width": 128,
         "height": 128
       },
@@ -14,23 +14,23 @@
     },
     "images": {
       "thumbnail": {
-        "src": "./assets/starry-night/thumbnail.jpg",
+        "src": "assets/starry-night/thumbnail.jpg",
         "width": 327,
         "height": 250
       },
       "gallery": {
-        "src": "./assets/starry-night/gallery.jpg",
+        "src": "assets/starry-night/gallery.jpg",
         "width": 917,
         "height": 712
       },
       "hero": {
         "small": {
-          "src": "./assets/starry-night/hero-small.jpg",
+          "src": "assets/starry-night/hero-small.jpg",
           "width": 654,
           "height": 560
         },
         "large": {
-          "src": "./assets/starry-night/hero-large.jpg",
+          "src": "assets/starry-night/hero-large.jpg",
           "width": 950,
           "height": 1120
         }
@@ -44,7 +44,7 @@
     "source": "https://en.wikipedia.org/wiki/Girl_with_a_Pearl_Earring",
     "artist": {
       "image": {
-        "src": "./assets/girl-with-pearl-earring/artist.jpg",
+        "src": "assets/girl-with-pearl-earring/artist.jpg",
         "width": 128,
         "height": 128
       },
@@ -52,23 +52,23 @@
     },
     "images": {
       "thumbnail": {
-        "src": "./assets/girl-with-pearl-earring/thumbnail.jpg",
+        "src": "assets/girl-with-pearl-earring/thumbnail.jpg",
         "width": 327,
         "height": 400
       },
       "gallery": {
-        "src": "./assets/girl-with-pearl-earring/gallery.jpg",
+        "src": "assets/girl-with-pearl-earring/gallery.jpg",
         "width": 519,
         "height": 712
       },
       "hero": {
         "small": {
-          "src": "./assets/girl-with-pearl-earring/hero-small.jpg",
+          "src": "assets/girl-with-pearl-earring/hero-small.jpg",
           "width": 654,
           "height": 560
         },
         "large": {
-          "src": "./assets/girl-with-pearl-earring/hero-large.jpg",
+          "src": "assets/girl-with-pearl-earring/hero-large.jpg",
           "width": 950,
           "height": 1120
         }
@@ -82,7 +82,7 @@
     "source": "https://en.wikipedia.org/wiki/Guernica_(Picasso)",
     "artist": {
       "image": {
-        "src": "./assets/guernica/artist.jpg",
+        "src": "assets/guernica/artist.jpg",
         "width": 128,
         "height": 128
       },
@@ -90,23 +90,23 @@
     },
     "images": {
       "thumbnail": {
-        "src": "./assets/guernica/thumbnail.jpg",
+        "src": "assets/guernica/thumbnail.jpg",
         "width": 327,
         "height": 285
       },
       "gallery": {
-        "src": "./assets/guernica/gallery.jpg",
+        "src": "assets/guernica/gallery.jpg",
         "width": 1253,
         "height": 712
       },
       "hero": {
         "small": {
-          "src": "./assets/guernica/hero-small.jpg",
+          "src": "assets/guernica/hero-small.jpg",
           "width": 654,
           "height": 560
         },
         "large": {
-          "src": "./assets/guernica/hero-large.jpg",
+          "src": "assets/guernica/hero-large.jpg",
           "width": 950,
           "height": 1120
         }
@@ -120,7 +120,7 @@
     "source": "https://en.wikipedia.org/wiki/Penitent_Magdalene_(Artemisia_Gentileschi)",
     "artist": {
       "image": {
-        "src": "./assets/penitent-magdalene/artist.jpg",
+        "src": "assets/penitent-magdalene/artist.jpg",
         "width": 128,
         "height": 128
       },
@@ -128,23 +128,23 @@
     },
     "images": {
       "thumbnail": {
-        "src": "./assets/penitent-magdalene/thumbnail.jpg",
+        "src": "assets/penitent-magdalene/thumbnail.jpg",
         "width": 327,
         "height": 250
       },
       "gallery": {
-        "src": "./assets/penitent-magdalene/gallery.jpg",
+        "src": "assets/penitent-magdalene/gallery.jpg",
         "width": 573,
         "height": 712
       },
       "hero": {
         "small": {
-          "src": "./assets/penitent-magdalene/hero-small.jpg",
+          "src": "assets/penitent-magdalene/hero-small.jpg",
           "width": 654,
           "height": 560
         },
         "large": {
-          "src": "./assets/penitent-magdalene/hero-large.jpg",
+          "src": "assets/penitent-magdalene/hero-large.jpg",
           "width": 950,
           "height": 1120
         }
@@ -158,7 +158,7 @@
     "source": "https://en.wikipedia.org/wiki/The_Storm_on_the_Sea_of_Galilee",
     "artist": {
       "image": {
-        "src": "./assets/the-storm-on-the-sea-of-galilee/artist.jpg",
+        "src": "assets/the-storm-on-the-sea-of-galilee/artist.jpg",
         "width": 128,
         "height": 128
       },
@@ -166,23 +166,23 @@
     },
     "images": {
       "thumbnail": {
-        "src": "./assets/the-storm-on-the-sea-of-galilee/thumbnail.jpg",
+        "src": "assets/the-storm-on-the-sea-of-galilee/thumbnail.jpg",
         "width": 327,
         "height": 340
       },
       "gallery": {
-        "src": "./assets/the-storm-on-the-sea-of-galilee/gallery.jpg",
+        "src": "assets/the-storm-on-the-sea-of-galilee/gallery.jpg",
         "width": 597,
         "height": 712
       },
       "hero": {
         "small": {
-          "src": "./assets/the-storm-on-the-sea-of-galilee/hero-small.jpg",
+          "src": "assets/the-storm-on-the-sea-of-galilee/hero-small.jpg",
           "width": 654,
           "height": 560
         },
         "large": {
-          "src": "./assets/the-storm-on-the-sea-of-galilee/hero-large.jpg",
+          "src": "assets/the-storm-on-the-sea-of-galilee/hero-large.jpg",
           "width": 950,
           "height": 1120
         }
@@ -196,7 +196,7 @@
     "source": "https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa",
     "artist": {
       "image": {
-        "src": "./assets/the-great-wave-off-kanagawa/artist.jpg",
+        "src": "assets/the-great-wave-off-kanagawa/artist.jpg",
         "width": 128,
         "height": 128
       },
@@ -204,23 +204,23 @@
     },
     "images": {
       "thumbnail": {
-        "src": "./assets/the-great-wave-off-kanagawa/thumbnail.jpg",
+        "src": "assets/the-great-wave-off-kanagawa/thumbnail.jpg",
         "width": 327,
         "height": 280
       },
       "gallery": {
-        "src": "./assets/the-great-wave-off-kanagawa/gallery.jpg",
+        "src": "assets/the-great-wave-off-kanagawa/gallery.jpg",
         "width": 809,
         "height": 712
       },
       "hero": {
         "small": {
-          "src": "./assets/the-great-wave-off-kanagawa/hero-small.jpg",
+          "src": "assets/the-great-wave-off-kanagawa/hero-small.jpg",
           "width": 654,
           "height": 560
         },
         "large": {
-          "src": "./assets/the-great-wave-off-kanagawa/hero-large.jpg",
+          "src": "assets/the-great-wave-off-kanagawa/hero-large.jpg",
           "width": 950,
           "height": 1120
         }
@@ -234,7 +234,7 @@
     "source": "https://en.wikipedia.org/wiki/Van_Gogh_self-portrait_(1889)",
     "artist": {
       "image": {
-        "src": "./assets/van-gogh-self-portrait/artist.jpg",
+        "src": "assets/van-gogh-self-portrait/artist.jpg",
         "width": 128,
         "height": 128
       },
@@ -242,23 +242,23 @@
     },
     "images": {
       "thumbnail": {
-        "src": "./assets/van-gogh-self-portrait/thumbnail.jpg",
+        "src": "assets/van-gogh-self-portrait/thumbnail.jpg",
         "width": 327,
         "height": 500
       },
       "gallery": {
-        "src": "./assets/van-gogh-self-portrait/gallery.jpg",
+        "src": "assets/van-gogh-self-portrait/gallery.jpg",
         "width": 597,
         "height": 712
       },
       "hero": {
         "small": {
-          "src": "./assets/van-gogh-self-portrait/hero-small.jpg",
+          "src": "assets/van-gogh-self-portrait/hero-small.jpg",
           "width": 654,
           "height": 560
         },
         "large": {
-          "src": "./assets/van-gogh-self-portrait/hero-large.jpg",
+          "src": "assets/van-gogh-self-portrait/hero-large.jpg",
           "width": 950,
           "height": 1120
         }
@@ -272,7 +272,7 @@
     "source": "https://en.wikipedia.org/wiki/The_Sleeping_Gypsy",
     "artist": {
       "image": {
-        "src": "./assets/the-sleeping-gypsy/artist.jpg",
+        "src": "assets/the-sleeping-gypsy/artist.jpg",
         "width": 128,
         "height": 128
       },
@@ -280,23 +280,23 @@
     },
     "images": {
       "thumbnail": {
-        "src": "./assets/the-sleeping-gypsy/thumbnail.jpg",
+        "src": "assets/the-sleeping-gypsy/thumbnail.jpg",
         "width": 327,
         "height": 250
       },
       "gallery": {
-        "src": "./assets/the-sleeping-gypsy/gallery.jpg",
+        "src": "assets/the-sleeping-gypsy/gallery.jpg",
         "width": 1107,
         "height": 712
       },
       "hero": {
         "small": {
-          "src": "./assets/the-sleeping-gypsy/hero-small.jpg",
+          "src": "assets/the-sleeping-gypsy/hero-small.jpg",
           "width": 654,
           "height": 560
         },
         "large": {
-          "src": "./assets/the-sleeping-gypsy/hero-large.jpg",
+          "src": "assets/the-sleeping-gypsy/hero-large.jpg",
           "width": 950,
           "height": 1120
         }
@@ -310,7 +310,7 @@
     "source": "https://en.wikipedia.org/wiki/Lady_with_an_Ermine",
     "artist": {
       "image": {
-        "src": "./assets/lady-with-an-ermine/artist.jpg",
+        "src": "assets/lady-with-an-ermine/artist.jpg",
         "width": 128,
         "height": 128
       },
@@ -318,23 +318,23 @@
     },
     "images": {
       "thumbnail": {
-        "src": "./assets/lady-with-an-ermine/thumbnail.jpg",
+        "src": "assets/lady-with-an-ermine/thumbnail.jpg",
         "width": 327,
         "height": 420
       },
       "gallery": {
-        "src": "./assets/lady-with-an-ermine/gallery.jpg",
+        "src": "assets/lady-with-an-ermine/gallery.jpg",
         "width": 537,
         "height": 712
       },
       "hero": {
         "small": {
-          "src": "./assets/lady-with-an-ermine/hero-small.jpg",
+          "src": "assets/lady-with-an-ermine/hero-small.jpg",
           "width": 654,
           "height": 560
         },
         "large": {
-          "src": "./assets/lady-with-an-ermine/hero-large.jpg",
+          "src": "assets/lady-with-an-ermine/hero-large.jpg",
           "width": 950,
           "height": 1120
         }
@@ -348,7 +348,7 @@
     "source": "https://en.wikipedia.org/wiki/The_Night_Caf%C3%A9",
     "artist": {
       "image": {
-        "src": "./assets/the-night-cafe/artist.jpg",
+        "src": "assets/the-night-cafe/artist.jpg",
         "width": 128,
         "height": 128
       },
@@ -356,23 +356,23 @@
     },
     "images": {
       "thumbnail": {
-        "src": "./assets/the-night-cafe/thumbnail.jpg",
+        "src": "assets/the-night-cafe/thumbnail.jpg",
         "width": 327,
         "height": 260
       },
       "gallery": {
-        "src": "./assets/the-night-cafe/gallery.jpg",
+        "src": "assets/the-night-cafe/gallery.jpg",
         "width": 947,
         "height": 712
       },
       "hero": {
         "small": {
-          "src": "./assets/the-night-cafe/hero-small.jpg",
+          "src": "assets/the-night-cafe/hero-small.jpg",
           "width": 654,
           "height": 560
         },
         "large": {
-          "src": "./assets/the-night-cafe/hero-large.jpg",
+          "src": "assets/the-night-cafe/hero-large.jpg",
           "width": 950,
           "height": 1120
         }
@@ -386,7 +386,7 @@
     "source": "https://en.wikipedia.org/wiki/The_Basket_of_Apples",
     "artist": {
       "image": {
-        "src": "./assets/the-basket-of-apples/artist.jpg",
+        "src": "assets/the-basket-of-apples/artist.jpg",
         "width": 128,
         "height": 128
       },
@@ -394,23 +394,23 @@
     },
     "images": {
       "thumbnail": {
-        "src": "./assets/the-basket-of-apples/thumbnail.jpg",
+        "src": "assets/the-basket-of-apples/thumbnail.jpg",
         "width": 327,
         "height": 430
       },
       "gallery": {
-        "src": "./assets/the-basket-of-apples/gallery.jpg",
+        "src": "assets/the-basket-of-apples/gallery.jpg",
         "width": 869,
         "height": 712
       },
       "hero": {
         "small": {
-          "src": "./assets/the-basket-of-apples/hero-small.jpg",
+          "src": "assets/the-basket-of-apples/hero-small.jpg",
           "width": 654,
           "height": 560
         },
         "large": {
-          "src": "./assets/the-basket-of-apples/hero-large.jpg",
+          "src": "assets/the-basket-of-apples/hero-large.jpg",
           "width": 950,
           "height": 1120
         }
@@ -424,7 +424,7 @@
     "source": "https://en.wikipedia.org/wiki/The_Boy_in_the_Red_Vest",
     "artist": {
       "image": {
-        "src": "./assets/the-boy-in-the-red-vest/artist.jpg",
+        "src": "assets/the-boy-in-the-red-vest/artist.jpg",
         "width": 128,
         "height": 128
       },
@@ -432,23 +432,23 @@
     },
     "images": {
       "thumbnail": {
-        "src": "./assets/the-boy-in-the-red-vest/thumbnail.jpg",
+        "src": "assets/the-boy-in-the-red-vest/thumbnail.jpg",
         "width": 327,
         "height": 260
       },
       "gallery": {
-        "src": "./assets/the-boy-in-the-red-vest/gallery.jpg",
+        "src": "assets/the-boy-in-the-red-vest/gallery.jpg",
         "width": 597,
         "height": 712
       },
       "hero": {
         "small": {
-          "src": "./assets/the-boy-in-the-red-vest/hero-small.jpg",
+          "src": "assets/the-boy-in-the-red-vest/hero-small.jpg",
           "width": 654,
           "height": 560
         },
         "large": {
-          "src": "./assets/the-boy-in-the-red-vest/hero-large.jpg",
+          "src": "assets/the-boy-in-the-red-vest/hero-large.jpg",
           "width": 950,
           "height": 1120
         }
@@ -462,7 +462,7 @@
     "source": "https://en.wikipedia.org/wiki/Arnolfini_Portrait",
     "artist": {
       "image": {
-        "src": "./assets/arnolfini-portrait/artist.jpg",
+        "src": "assets/arnolfini-portrait/artist.jpg",
         "width": 128,
         "height": 128
       },
@@ -470,23 +470,23 @@
     },
     "images": {
       "thumbnail": {
-        "src": "./assets/arnolfini-portrait/thumbnail.jpg",
+        "src": "assets/arnolfini-portrait/thumbnail.jpg",
         "width": 327,
         "height": 330
       },
       "gallery": {
-        "src": "./assets/arnolfini-portrait/gallery.jpg",
+        "src": "assets/arnolfini-portrait/gallery.jpg",
         "width": 509,
         "height": 712
       },
       "hero": {
         "small": {
-          "src": "./assets/arnolfini-portrait/hero-small.jpg",
+          "src": "assets/arnolfini-portrait/hero-small.jpg",
           "width": 654,
           "height": 566
         },
         "large": {
-          "src": "./assets/arnolfini-portrait/hero-large.jpg",
+          "src": "assets/arnolfini-portrait/hero-large.jpg",
           "width": 950,
           "height": 1120
         }
@@ -500,7 +500,7 @@
     "source": "https://en.wikipedia.org/wiki/Mona_Lisa",
     "artist": {
       "image": {
-        "src": "./assets/mona-lisa/artist.jpg",
+        "src": "assets/mona-lisa/artist.jpg",
         "width": 128,
         "height": 128
       },
@@ -508,23 +508,23 @@
     },
     "images": {
       "thumbnail": {
-        "src": "./assets/mona-lisa/thumbnail.jpg",
+        "src": "assets/mona-lisa/thumbnail.jpg",
         "width": 327,
         "height": 525
       },
       "gallery": {
-        "src": "./assets/mona-lisa/gallery.jpg",
+        "src": "assets/mona-lisa/gallery.jpg",
         "width": 509,
         "height": 712
       },
       "hero": {
         "small": {
-          "src": "./assets/mona-lisa/hero-small.jpg",
+          "src": "assets/mona-lisa/hero-small.jpg",
           "width": 654,
           "height": 564
         },
         "large": {
-          "src": "./assets/mona-lisa/hero-large.jpg",
+          "src": "assets/mona-lisa/hero-large.jpg",
           "width": 950,
           "height": 1120
         }
@@ -538,7 +538,7 @@
     "source": "https://en.wikipedia.org/wiki/The_Swing_(Fragonard)",
     "artist": {
       "image": {
-        "src": "./assets/the-swing/artist.jpg",
+        "src": "assets/the-swing/artist.jpg",
         "width": 128,
         "height": 128
       },
@@ -546,23 +546,23 @@
     },
     "images": {
       "thumbnail": {
-        "src": "./assets/the-swing/thumbnail.jpg",
+        "src": "assets/the-swing/thumbnail.jpg",
         "width": 327,
         "height": 340
       },
       "gallery": {
-        "src": "./assets/the-swing/gallery.jpg",
+        "src": "assets/the-swing/gallery.jpg",
         "width": 585,
         "height": 712
       },
       "hero": {
         "small": {
-          "src": "./assets/the-swing/hero-small.jpg",
+          "src": "assets/the-swing/hero-small.jpg",
           "width": 654,
           "height": 560
         },
         "large": {
-          "src": "./assets/the-swing/hero-large.jpg",
+          "src": "assets/the-swing/hero-large.jpg",
           "width": 950,
           "height": 1120
         }

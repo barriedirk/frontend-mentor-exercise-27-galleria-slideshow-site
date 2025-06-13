@@ -6,6 +6,10 @@ interface Props {
 }
 
 const { isStartSlideShow = true } = Astro.props;
+const isDev = process.env.NODE_ENV === "development";
+const base = isDev
+  ? "/"
+  : "/frontend-mentor-exercise-27-galleria-slideshow-site/";
 ---
 
 <header
@@ -16,12 +20,12 @@ const { isStartSlideShow = true } = Astro.props;
     <div
       class="header__container h-full py-[20px] md:py-[50px] flex flex-row justify-between items-center max-w-[1440px] m-auto border-b border-gray-200"
     >
-      <a href="./" class="header__logo" aria-label="Go to homepage">
+      <a href={`${base}`} class="header__logo" aria-label="Go to homepage">
         <svg
           class="logo w-[113px] h-[32px] basis-[32px] lg:w-[170px] lg:h-[48px] lg:basis-[48px] inline-block flex-none"
           aria-hidden="true"
         >
-          <use href="./assets/shared/logo.svg#logo-galleria"></use>
+          <use href={`${base}assets/shared/logo.svg#logo-galleria`}></use>
         </svg>
       </a>
       <div id="slideshow-announcement" aria-live="polite" class="sr-only"></div>
@@ -65,7 +69,7 @@ const { isStartSlideShow = true } = Astro.props;
         ? "Slideshow started"
         : "Slideshow stopped";
 
-      window.location.replace(`${baseHref}${isPressed ? "" : "./art/0"}`);
+      window.location.replace(`${isPressed ? baseHref : baseHref + "art/0"}`);
     });
   };
 

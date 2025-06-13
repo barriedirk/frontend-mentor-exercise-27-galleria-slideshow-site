@@ -9,7 +9,7 @@
 
     <meta name="author" content="Barrie Freyre">
 
-    <base href="https://barriedirk.github.io/frontend-mentor-exercise-27-galleria-slideshow-site/">
+    <base href="/frontend-mentor-exercise-27-galleria-slideshow-site/">
 
     <meta name="linkedin" content="https://www.linkedin.com/in/barriefreyre/">
     <meta name="github" content="https://github.com/barriedirk">
@@ -55,9 +55,9 @@
   <div class=" w-full mx-auto px-[25px]">
   
     <div class="header__container h-full py-[20px] md:py-[50px] flex flex-row justify-between items-center max-w-[1440px] m-auto border-b border-gray-200">
-      <a href="./" class="header__logo" aria-label="Go to homepage">
+      <a href="/frontend-mentor-exercise-27-galleria-slideshow-site/" class="header__logo" aria-label="Go to homepage">
         <svg class="logo w-[113px] h-[32px] basis-[32px] lg:w-[170px] lg:h-[48px] lg:basis-[48px] inline-block flex-none" aria-hidden="true">
-          <use href="./assets/shared/logo.svg#logo-galleria"></use>
+          <use href="/frontend-mentor-exercise-27-galleria-slideshow-site/assets/shared/logo.svg#logo-galleria"></use>
         </svg>
       </a>
       <div id="slideshow-announcement" aria-live="polite" class="sr-only"></div>
@@ -96,7 +96,7 @@
         ? "Slideshow started"
         : "Slideshow stopped";
 
-      window.location.replace(`${baseHref}${isPressed ? "" : "./art/0"}`);
+      window.location.replace(`${isPressed ? baseHref : baseHref + "art/0"}`);
     });
   };
 
@@ -117,13 +117,13 @@
   <div class="slide__header" data-astro-cid-5tozoqgj>
     <figure id="slide__figure" class="slide__figure relative" data-astro-cid-5tozoqgj>
       <picture id="slide__picture" class="slide__picture" data-astro-cid-5tozoqgj>
-        <source id="slide__picture-source" media="(min-width: 600px)" srcset="./assets/starry-night/hero-large.jpg" data-astro-cid-5tozoqgj>
-        <img id="slide__picture-img" class="slide__picture-img" src="./assets/starry-night/hero-small.jpg" alt="Paiting titled Starry Night by Vincent Van Gogh" data-astro-cid-5tozoqgj>
+        <source id="slide__picture-source" media="(min-width: 600px)" srcset="/frontend-mentor-exercise-27-galleria-slideshow-site/assets/starry-night/hero-large.jpg" data-astro-cid-5tozoqgj>
+        <img id="slide__picture-img" class="slide__picture-img" src="/frontend-mentor-exercise-27-galleria-slideshow-site/assets/starry-night/hero-small.jpg" alt="Paiting titled Starry Night by Vincent Van Gogh" data-astro-cid-5tozoqgj>
       </picture>
       <figcaption id="slide__figcaption" class="slide__figcaption absolute" data-astro-cid-5tozoqgj>
-        <a id="slide__view-image" class="slide__view-image text-preset-7 flex flex-row justify-center items-center gap-2 p-3.5" aria-label="View source of painting Starry Night by Vincent Van Gogh" href="./assets/starry-night/gallery.jpg" data-width="917" data-height="712" target="_blank" data-astro-cid-5tozoqgj>
+        <a id="slide__view-image" class="slide__view-image text-preset-7 flex flex-row justify-center items-center gap-2 p-3.5" aria-label="View source of painting Starry Night by Vincent Van Gogh" href="/frontend-mentor-exercise-27-galleria-slideshow-site/assets/starry-night/gallery.jpg" data-width="917" data-height="712" target="_blank" data-astro-cid-5tozoqgj>
           <svg class="w-[12px] h-[12px] basis-[12px] text-white" aria-hidden="true" data-astro-cid-5tozoqgj>
-            <use href="./assets/shared/icon-view-image.svg#icon-view" data-astro-cid-5tozoqgj></use>
+            <use href="/frontend-mentor-exercise-27-galleria-slideshow-site/assets/shared/icon-view-image.svg#icon-view" data-astro-cid-5tozoqgj></use>
           </svg>
           <span data-astro-cid-5tozoqgj>VIEW SOURCE</span>
         </a>
@@ -139,7 +139,7 @@
         </h3>
       </div>
       <div class="slide__portrait" data-astro-cid-5tozoqgj>
-        <img id="slide__author-portrait" class="slide__author-portrait" src="./assets/starry-night/artist.jpg" alt="Portrait of Vincent Van Gogh" aria-hidden="true" data-astro-cid-5tozoqgj>
+        <img id="slide__author-portrait" class="slide__author-portrait" src="/frontend-mentor-exercise-27-galleria-slideshow-site/assets/starry-night/artist.jpg" alt="Portrait of Vincent Van Gogh" aria-hidden="true" data-astro-cid-5tozoqgj>
       </div>
     </div>
   </div>
@@ -175,12 +175,12 @@
     <div class="slide__footer-handlers flex flex-row justify-center items-center gap-4" data-astro-cid-5tozoqgj>
       <button id="slide__handler-btn-back" class="slide__handler-btn" aria-label="Previous painting" type="button" data-direction="back" data-astro-cid-5tozoqgj>
         <svg class="slide__handler-back w-[26px] h-[24px]" aria-hidden="true" data-astro-cid-5tozoqgj>
-          <use href="./assets/shared/icon-back-button.svg#icon-back" data-astro-cid-5tozoqgj></use>
+          <use href="/frontend-mentor-exercise-27-galleria-slideshow-site/assets/shared/icon-back-button.svg#icon-back" data-astro-cid-5tozoqgj></use>
         </svg>
       </button>
       <button id="slide__handler-btn-next" class="slide__handler-btn" aria-label="Next painting" type="button" data-direction="next" data-astro-cid-5tozoqgj>
         <svg class="slide__handler-next w-[26px] h-[24px]" aria-hidden="true" data-astro-cid-5tozoqgj>
-          <use href="./assets/shared/icon-next-button.svg#icon-next" data-astro-cid-5tozoqgj></use>
+          <use href="/frontend-mentor-exercise-27-galleria-slideshow-site/assets/shared/icon-next-button.svg#icon-next" data-astro-cid-5tozoqgj></use>
         </svg>
       </button>
     </div>

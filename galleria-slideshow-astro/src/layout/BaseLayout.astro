@@ -15,14 +15,12 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 const isDev = process.env.NODE_ENV === "development";
-// const base = "/";
 const base = isDev
   ? "/"
-  : "https://barriedirk.github.io/frontend-mentor-exercise-27-galleria-slideshow-site/";
+  : "/frontend-mentor-exercise-27-galleria-slideshow-site/";
 let {
   title,
   className = "",
-  urlActive = "/",
   showFooter = true,
   isStartSlideShow = true,
 } = Astro.props;
