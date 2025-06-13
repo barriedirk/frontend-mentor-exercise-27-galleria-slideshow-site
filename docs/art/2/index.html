@@ -34,8 +34,13 @@
     </script>
 
     <!-- dialog-polyfill from Google. To mimics native -->
-    <link rel="stylesheet" href="https://unpkg.com/dialog-polyfill@0.5.6/dist/dialog-polyfill.css">
-    <script type="module">const e=()=>{window.addEventListener("load",()=>{document.body.classList.add("fade-in")})};e();document.addEventListener("astro:after-swap",()=>{setTimeout(()=>{document.querySelector("body").classList.add("fade-in")},300)});</script>
+    <!-- <link
+      rel="stylesheet"
+      href="https://unpkg.com/dialog-polyfill@0.5.6/dist/dialog-polyfill.css"
+    />
+    <script
+      src="https://unpkg.com/dialog-polyfill@0.5.6/dist/dialog-polyfill.js"
+    ></script> -->
 
     <title>Frontend Mentor | Galleria - Guernica</title>
     
@@ -265,4 +270,4 @@ const idx = 2;
       </form>
       <div id="modal-dialog-container" class="modal-dialog-container"></div>
     </dialog>
-  <script type="module" src="/frontend-mentor-exercise-27-galleria-slideshow-site/_astro/BaseLayout.astro_astro_type_script_index_1_lang.CBxl0pOq.js"></script></body></html>
+  <script type="module">const e=()=>{window.addEventListener("load",()=>{document.body.classList.add("fade-in")})};e();document.addEventListener("astro:after-swap",()=>{setTimeout(()=>{document.querySelector("body").classList.add("fade-in")},300)});</script></body></html>
