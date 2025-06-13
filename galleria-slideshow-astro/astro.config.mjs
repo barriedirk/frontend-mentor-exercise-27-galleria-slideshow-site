@@ -16,6 +16,7 @@ export default defineConfig({
 
   compressHTML: false,
   build: {
+    assets: "astro_",
     inlineStylesheets: "always",
   },
   vite: {
